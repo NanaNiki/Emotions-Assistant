@@ -2,26 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: rgb(54, 54, 152);
-  --background-start-rgb: rgb(19, 117, 198);
-  --background-end-rgb: rgb(31, 31, 91);
-}
+html {
+  --scroll-behavior: smooth!important;
+  scroll-behavior: smooth!important;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: rgb(27, 27, 107);
-    --background-start-rgb: rgb(15, 15, 74);
-    --background-end-rgb: blue;
+/* @layer utilities {
+  ::-webkit-scrollbar {
+    @apply w-2 h-2 bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-blue-500 bg-opacity-30;
+  }
+} */
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply hidden;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.slide-in {
+  @apply opacity-0 duration-[2s] ease-in-out blur-md transform -translate-x-full;
+}
+.show-up{
+  @apply opacity-0 duration-[2s] ease-in-out blur-md ;
+}
+.show {
+  @apply opacity-100 blur-none translate-x-0;
+}
+.fade-in{
+  @apply opacity-100 blur-none duration-[1s] 
+}
+.fade-out {
+  @apply opacity-0 blur-md duration-[2s];
+}
+
+
+@keyframes breathe {
+  0% {
+    opacity: 0.4;
+    filter: hue-rotate(30deg);
+    transform: scale(0.4);
+    
+  }
+  45% {
+    opacity: 1;
+    filter: hue-rotate(0deg);
+    transform: scale(1);
+  
+  }
+  100% {
+    opacity: 0.4;
+    filter: hue-rotate(30deg);
+    transform: scale(0.4);
+  
+  }
+}
+
+.breathe-animation{
+  animation: breathe 10s ease-in-out 7 forwards;
 }
