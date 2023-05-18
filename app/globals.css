@@ -29,7 +29,7 @@ html {
   @apply opacity-0 duration-[2s] ease-in-out blur-md ;
 }
 .show {
-  @apply opacity-100 blur-none translate-x-0;
+  @apply opacity-100 blur-none;
 }
 .fade-in{
   @apply opacity-100 blur-none duration-[1s] 
@@ -43,23 +43,114 @@ html {
   0% {
     opacity: 0.4;
     filter: hue-rotate(30deg);
-    transform: scale(0.4);
-    
+    transform: scale(0.4); 
   }
   45% {
     opacity: 1;
     filter: hue-rotate(0deg);
     transform: scale(1);
-  
   }
   100% {
     opacity: 0.4;
     filter: hue-rotate(30deg);
     transform: scale(0.4);
-  
   }
 }
 
 .breathe-animation{
   animation: breathe 10s ease-in-out 7 forwards;
+}
+.emotions-right-animation {
+  animation: emotions-right 6s ease-in-out infinite;
+}
+.emotions-left-animation {
+  animation: emotions-left 6s ease-in-out infinite;
+}
+.pause {
+  animation-play-state: paused;
+}
+
+@keyframes emotions-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%) translateY(0%);
+    filter:blur(0px);
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-200px) translateY(350px);
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  70% {
+    transform: translateX(-200px) translateY(200px);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-650px) translateY(350px);
+    filter: blur(2px);
+  }
+}
+
+@keyframes emotions-left {
+  0% {
+    opacity: 0;
+    transform: translateX(0%) translateY(0%);
+    filter:blur(0px);
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(200px) translateY(350px);
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  70% {
+    transform: translateX(200px) translateY(200px);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1)
+  }
+  100% {
+    opacity:0;
+    transform: translateX(650px) translateY(350px);
+    filter: blur(2px);
+  }
+}
+.e-right svg:nth-child(2) {
+  animation-delay: 2s;
+}
+.e-right svg:nth-child(3) {
+  animation-delay: 1.2s;
+}
+.e-right svg:nth-child(4) {
+  animation-delay: 2.2s;
+}
+.e-right svg:nth-child(5) {
+  animation-delay: 1.5s;
+}
+.e-right svg:nth-child(6) {
+  animation-delay: 1.7s;
+}
+.e-right svg:nth-child(7) {
+  animation-delay: 2.3s;
+}
+
+.e-left svg:nth-child(2) {
+  animation-delay: 2s;
+}
+.e-left svg:nth-child(3) {
+  animation-delay: 1.2s;
+}
+.e-left svg:nth-child(4) {
+  animation-delay: 2.2s;
+}
+.e-left svg:nth-child(5) {
+  animation-delay: 1.5s;
+}
+.e-left svg:nth-child(6) {
+  animation-delay: 1.7s;
+}
+.e-left svg:nth-child(7) {
+  animation-delay: 2.3s;
 }
