@@ -20,24 +20,26 @@ import {
 import { GiMeditation } from "react-icons/gi";
 
 export default function Emotions() {
-    const router = useRouter();
-    const [animationPaused, setAnimationPaused] = useState(false);
- 
-    useEffect(() => {
+  const router = useRouter();
+  const [animationPaused, setAnimationPaused] = useState(false);
+
+  useEffect(() => {
     const animatedItems = document.querySelectorAll(".animated-item");
     observeScroll(animatedItems, "show");
   }, []);
 
   const pauseAnimation = () => {
-    const elements = document.querySelectorAll(".emotions-right-animation, .emotions-left-animation");
+    const elements = document.querySelectorAll(
+      ".emotions-right-animation, .emotions-left-animation"
+    );
     elements.forEach((element) => {
       element.classList.add("pause");
     });
     setAnimationPaused(true);
 
-    setTimeout(() =>{
-        router.push("#process");
-    }, 1500)
+    setTimeout(() => {
+      router.push("#selection");
+    }, 1500);
   };
 
   return (
@@ -69,7 +71,9 @@ export default function Emotions() {
         No worries, I'm here to break it down for You!
       </h1>
       <button
-        className={`animated-item show-up delay-[5s] flex w-screen mt-20 z-10 ${animationPaused ? "pointer-event-none" : ""}`}
+        className={`animated-item show-up delay-[5s] flex w-screen mt-20 z-10 ${
+          animationPaused ? "pointer-event-none" : ""
+        }`}
       >
         <GiMeditation
           onClick={() => pauseAnimation()}

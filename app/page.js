@@ -21,6 +21,7 @@ export default function Home() {
     <main className="w-screen scroll-smooth overflow-hidden">
       <Start />
       <DynamicEmotions />
+      <DynamicSelection />
       <DynamicProcess />
     </main>
   );
@@ -29,6 +30,9 @@ export default function Home() {
 const DynamicEmotions = dynamic(() => import("./components/Emotions"), {
   ssr: false,
 });
-const DynamicProcess = dynamic(() => import("./components/Process"), {
+const DynamicSelection = dynamic(() => import("./components/Selection.js"), {
+  ssr: false,
+});
+const DynamicProcess = dynamic(() => import("./components/Process.js"), {
   ssr: false,
 });

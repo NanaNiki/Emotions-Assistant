@@ -45,7 +45,7 @@ export default function Start() {
   return (
     <>
       <div className="flex flex-col items-center justify-evenly h-screen w-screen font-bold overflow-y-visible overflow-x-hidden">
-        <div className="z-20 overflow-x-hidden w-screen h-fit">
+        <div className="overflow-x-hidden w-screen h-fit">
         <Image
           src={"bbl.svg"}
           width={450}
