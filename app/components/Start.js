@@ -83,14 +83,14 @@ export default function Start() {
         <h1 className="animated-item show-up delay-[6s] text-3xl">
           First, let's breathe a little
         </h1>
-        <a href="#breathe">
+        <Link href="#breathe">
           <button
             onClick={handleStartCountDown}
             className="bg-purple-950 hover:bg-pink-900 text-white rounded-full p-2.5 px-5 text-3xl animated-item show-up delay-[0.5s]"
           >
             Ready?
           </button>
-        </a>
+        </Link>
       </div>
       <div className="h-screen w-screen" id="breathe">
         <div className="flex flex-col items-center">

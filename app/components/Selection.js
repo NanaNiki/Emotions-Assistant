@@ -15,15 +15,19 @@ export default function Selection() {
     console.log(emotionName);
   };
 
-  // const handleFormSubmit = (event) => {
-  //   event.preventDefault();
-  //   setSearchEmotion(emotionName.toLowerCase());
-  //   console.log(emotionName);
-  // };
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const matchingEmotion = emotionsData.find((emotion) => 
+      emotion.name.toLowerCase() === searchEmotion.toLowerCase())
+    if (matchingEmotion) {
+      setSearchEmotion(matchingEmotion.name.toLowerCase());
+      console.log(matchingEmotion.name);
+    }
+  };
 
   return (
-    <div className="h-screen w-screen" id="selection">
-      <h1 className="animated-item show-up delay-[0.5s] text-3xl text-center mt-10">
+    <div className="h-screen w-screen flex flex-col justify-center" id="selection">
+      <h1 className="animated-item show-up delay-[0.5s] text-3xl text-center">
         Please select <span> one</span> emotion You are feeling right now.
       </h1>
       <div className="flex flex-row py-8 justify-center align-middle">
@@ -40,6 +44,7 @@ export default function Selection() {
         <Link href={"#process"} passHref={true}>
           <button
             type="submit"
+            onClick={handleFormSubmit}
             className="p-1 h-8 text-2xl rounded-full shadow-white shadow-sm hover:shadow-purple-300 hover:text-purple-300"
           >
             <BsCheckLg />

@@ -154,3 +154,40 @@ html {
 .e-left svg:nth-child(7) {
   animation-delay: 2.3s;
 }
+
+@keyframes uncover {
+  0% {
+    opacity: 0;
+    transform: scaleX(0%) rotateY(100deg);
+    filter: hue-rotate(45deg);
+    overflow: hidden;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(100%) rotateY(0deg);
+    filter: hue-rotate(0deg);
+  }
+}
+.has-animation:hover .uncover-animation {
+  animation: uncover 210ms ease-in-out forwards;
+}
+.has-animation:hover .cover-animation{
+  animation: cover 210ms ease-in-out forwards;
+}
+
+@keyframes cover {
+  0% {
+    opacity: 1;
+    transform: rotateY(0deg);
+    filter: hue-rotate(0deg);
+    overflow: hidden;
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(100deg);
+    filter: hue-rotate(45deg);
+  }
+}
+.special-text{
+  text-shadow: 2px 3px 2px rgb(196, 15, 142);
+}
