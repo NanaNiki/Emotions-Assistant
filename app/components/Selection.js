@@ -1,9 +1,10 @@
 import emotionsData from "../emotions.json";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { BsCheckLg } from "react-icons/bs";
-import Link from "next/link";
 
 export default function Selection() {
+  const router = useRouter();
   const [searchEmotion, setSearchEmotion] = useState("");
 
   const handleInputChange = (e) => {
@@ -12,21 +13,25 @@ export default function Selection() {
 
   const handleClick = (emotionName) => {
     setSearchEmotion(emotionName.toLowerCase());
-    console.log(emotionName);
   };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const matchingEmotion = emotionsData.find((emotion) => 
-      emotion.name.toLowerCase() === searchEmotion.toLowerCase())
+    const matchingEmotion = emotionsData.find(
+      (emotion) => emotion.name.toLowerCase() === searchEmotion.toLowerCase()
+    );
     if (matchingEmotion) {
       setSearchEmotion(matchingEmotion.name.toLowerCase());
       console.log(matchingEmotion.name);
+      router.push("#process");
     }
   };
 
   return (
-    <div className="h-screen w-screen flex flex-col justify-center" id="selection">
+    <div
+      className="h-screen w-screen flex flex-col justify-center"
+      id="selection"
+    >
       <h1 className="animated-item show-up delay-[0.5s] text-3xl text-center">
         Please select <span> one</span> emotion You are feeling right now.
       </h1>
@@ -41,15 +46,13 @@ export default function Selection() {
             className="rounded-full ps-2 py-1 text-base text-indigo-950"
           ></input>
         </form>
-        <Link href={"#process"} passHref={true}>
-          <button
-            type="submit"
-            onClick={handleFormSubmit}
-            className="p-1 h-8 text-2xl rounded-full shadow-white shadow-sm hover:shadow-purple-300 hover:text-purple-300"
-          >
-            <BsCheckLg />
-          </button>
-        </Link>
+        <button
+          type="submit"
+          onClick={handleFormSubmit}
+          className="p-1 h-8 text-2xl rounded-full shadow-white shadow-sm hover:shadow-purple-300 hover:text-purple-300"
+        >
+          <BsCheckLg />
+        </button>
       </div>
 
       <div className="grid grid-cols-6 px-5 w-fit mx-auto">

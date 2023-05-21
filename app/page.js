@@ -1,15 +1,16 @@
 "use client";
 import dynamic from "next/dynamic.js";
 import Start from "./components/Start.js";
+import { useEffect } from 'react'
 
-export function observeScroll(elements, className) {
+export function observeScroll(elements) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       console.log(entry);
       if (entry.isIntersecting) {
-        entry.target.classList.add(className);
+        entry.target.classList.add("show");
       } else {
-        entry.target.classList.remove(className);
+        entry.target.classList.remove("show");
       }
     });
   });
@@ -17,6 +18,10 @@ export function observeScroll(elements, className) {
 }
 
 export default function Home() {
+  useEffect(() => {
+    const animatedItems = document.querySelectorAll(".animated-item");
+    observeScroll(animatedItems);
+  }, []);
   return (
     <main className="w-screen scroll-smooth overflow-hidden">
       <Start />

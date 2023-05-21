@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { observeScroll } from "../page";
@@ -25,7 +24,7 @@ export default function Emotions() {
 
   useEffect(() => {
     const animatedItems = document.querySelectorAll(".animated-item");
-    observeScroll(animatedItems, "show");
+    observeScroll(animatedItems);
   }, []);
 
   const pauseAnimation = () => {

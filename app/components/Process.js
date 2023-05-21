@@ -21,10 +21,8 @@ const processData = [
 export default function Process() {
   return (
     <div
-      className="relative h-screen w-screen flex flex-col justify-center"
-      id="process"
-    >
-    <Link href="#work" passHref={true} className="absolute top-12 right-8 rotate-12 mt-5 w-fit mx-auto opacity-60 bg-pink-700 hover:opacity-100 hover:bg-indigo-700 text-white rounded-full p-2 px-5 text-2xl"
+      className="relative h-screen w-screen flex flex-col justify-center" id="process">
+    <Link href="#work" className="absolute top-12 right-8 rotate-12 mt-5 w-fit mx-auto bg-pink-700 hover:bg-indigo-800 text-white rounded-full p-2 px-5 text-2xl animated-item show-up"
           > Let's do the work!</Link>
       <h1 className="mt-10 animated-item show-up delay-[0.25s] text-3xl text-center font-bold">
         What does <span className="special-text">emotional integration</span> mean?
