@@ -1,9 +1,9 @@
 import emotionsData from "../emotions.json";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { BsCheckLg } from "react-icons/bs";
 
-export default function Selection() {
+export default function Selection({setShowPopUp}) {
   const router = useRouter();
   const [searchEmotion, setSearchEmotion] = useState("");
 
@@ -24,10 +24,14 @@ export default function Selection() {
       setSearchEmotion(matchingEmotion.name.toLowerCase());
       console.log(matchingEmotion.name);
       router.push("#process");
+    } else if (!matchingEmotion) {
+      setShowPopUp(true)
     }
   };
+  
 
   return (
+    <>
     <div
       className="h-screen w-screen flex flex-col justify-center"
       id="selection"
@@ -87,5 +91,6 @@ export default function Selection() {
         })}
       </div>
     </div>
+    </>
   );
 }

@@ -29,16 +29,13 @@ html {
   @apply opacity-0 duration-[2s] ease-in-out blur-md;
 }
 .show {
-  @apply opacity-100 blur-none;
+  @apply opacity-100 blur-none translate-x-0;
 }
 .fade-in {
   @apply opacity-100 blur-none duration-[1s];
 }
 .fade-out {
   @apply opacity-0 blur-md duration-[2s];
-}
-.show-up-slow {
-  @apply opacity-0 duration-[2s] ease-in-out blur-md;
 }
 
 @keyframes breathe {
@@ -190,6 +187,6 @@ html {
     filter: hue-rotate(45deg);
   }
 }
-.special-text {
+.shadow-text {
   text-shadow: 2px 3px 2px rgb(196, 15, 142);
 }
