@@ -43,7 +43,7 @@ export default function Emotions() {
 
   return (
     <div className="h-screen w-screen" id="emotions">
-      <h1 className="animated-item show-up delay-[1s] text-3xl text-center pt-20">
+      <h1 className="animated-item show-up delay-[0.5s] text-3xl text-center pt-20">
         Sometimes, emotions can be overwhelming...
       </h1>
       <div className="animated-item show-up delay-[1s] relative">

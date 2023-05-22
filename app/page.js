@@ -34,6 +34,7 @@ export default function Home() {
       <DynamicEmotions />
       <DynamicSelection setShowPopUp={setShowPopUp} />
       <DynamicProcess />
+      <DynamicWork />
     </main>
     {showPopUp && <Popup onHandleClose={handleClosePopUp} />}
     </>
@@ -47,5 +48,8 @@ const DynamicSelection = dynamic(() => import("./components/Selection.js"), {
   ssr: false,
 });
 const DynamicProcess = dynamic(() => import("./components/Process.js"), {
+  ssr: false,
+});
+const DynamicWork = dynamic(() => import("./components/Work.js"), {
   ssr: false,
 });

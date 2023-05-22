@@ -23,6 +23,7 @@ export default function Selection({setShowPopUp}) {
     if (matchingEmotion) {
       setSearchEmotion(matchingEmotion.name.toLowerCase());
       console.log(matchingEmotion.name);
+      localStorage.setItem("selectedEmotion", JSON.stringify(matchingEmotion));
       router.push("#process");
     } else if (!matchingEmotion) {
       setShowPopUp(true)
@@ -37,7 +38,7 @@ export default function Selection({setShowPopUp}) {
       id="selection"
     >
       <h1 className="animated-item show-up delay-[0.5s] text-3xl text-center">
-        Please select <span> one</span> emotion You are feeling right now.
+        Please select one emotion You are feeling right now.
       </h1>
       <div className="flex flex-row py-8 justify-center align-middle">
         <h1 className="text-3xl">Today I am feeling</h1>
