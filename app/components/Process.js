@@ -45,7 +45,7 @@ export default function Process() {
             return (
               <div key={index} className="has-animation relative w-full h-full">
                 <div className="uncover-animation absolute opacity-0 flex flex-col col-span-1 bg-indigo-200 rounded-3xl mx-4 h-[26rem] text-justify">
-                  <h1 className="my-auto text-base m-6 text-indigo-700">
+                  <h1 className="my-auto text-base m-6 text-indigo-700 selection:bg-pink-600 selection:text-pink-100">
                     {step.text}
                   </h1>
                 </div>

@@ -190,3 +190,28 @@ html {
 .shadow-text {
   text-shadow: 2px 3px 2px rgb(196, 15, 142);
 }
+
+@keyframes slideup {
+  0% {
+    transform: translateY(0%);    
+  }
+  100% {
+    transform: translateY(-110%);
+  }
+}
+
+.has-animation:hover .slideup-animation{
+  animation: slideup 1.5s ease-in-out forwards;
+}
+
+.slidedown-animation{
+  animation: slidedown 1.5s ease-in-out forwards;
+}
+@keyframes slidedown {
+  0% {
+    transform: translateY(-110%);    
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
