@@ -1,51 +1,9 @@
-import emotionsData from "../emotions.json";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
-export default function Work() {
-  const [selectedEmotion, setSelectedEmotion] = useState(null);
-
-  useEffect(() => {
-    const storedEmotion = localStorage.getItem("selectedEmotion");
-    if (storedEmotion) {
-      setSelectedEmotion(JSON.parse(storedEmotion));
-    }
-  }, []);
-
+export default function Work({selectedEmotion}) {
   return (
     <div className="h-screen w-screen" id="work">
-      {selectedEmotion ? (
-        <>
-          <h1 className="animated-item show-up delay-[0.5s] text-3xl text-center pt-10">
-            Let's work on:{" "}
-            <span className="shadow-text font-bold">{selectedEmotion.name}</span>
-          </h1>
-          <h1 className="text-xl p-5 w-8/12 text-justify mx-auto">
-            {selectedEmotion.text}
-          </h1>
-          <div className="flex flex-row">
-            <div className="flex flex-col m-5 bg-purple-900 rounded-3xl">
-              <h1 className=" text-2xl text-center my-2 shadow-text">
-                How to feel it?
-              </h1>
-              <h1 className=" text-lg px-5 pb-2 text-purple-200">
-                {selectedEmotion.feel}
-              </h1>
-            </div>
-            <div className="flex flex-col m-5 bg-indigo-900 rounded-3xl">
-              <h1 className="text-2xl text-center my-2 shadow-text">
-                How to express it?
-              </h1>
-              <h1 className=" text-lg px-5 pb-2 text-indigo-200">
-                {selectedEmotion.express}
-              </h1>
-            </div>
-            </div>
-            <div className="w-8/12 h-fit bg-pink-900 rounded-full mx-auto mt-5">
-              <h1 className="px-12 py-4 text-justify text-pink-300">{selectedEmotion.note}</h1>
-            </div>
-        </>
-      ) : (
+      {!selectedEmotion ? (
         <div className="w-fit h-fit mt-20 mx-auto items-center flex">
           <Link
             href={"#selection"}
@@ -54,7 +12,43 @@ export default function Work() {
             Emotion not selcted. Please go back to Selection.
           </Link>
         </div>
+      ) : (
+        <>
+          <h1 className="animated-item delay-[0.5s] text-3xl text-center pt-10">
+            Let's work on:{" "}
+            <span className="shadow-text font-bold">
+              {selectedEmotion.name}
+            </span>
+          </h1>
+          <h1 className="text-xl p-5 w-8/12 text-justify mx-auto">
+            {selectedEmotion.text}
+          </h1>
+          <div className="flex flex-row">
+            <div className="flex flex-col m-5 bg-indigo-500 rounded-3xl">
+              <h1 className=" text-2xl text-center pt-5 shadow-text">
+                How to feel it?
+              </h1>
+              <h1 className=" text-base p-5 text-indigo-100">
+                {selectedEmotion.feel}
+              </h1>
+            </div>
+            <div className="flex flex-col m-5 bg-indigo-500 rounded-3xl">
+              <h1 className="text-2xl text-center pt-5 shadow-text">
+                How to express it?
+              </h1>
+              <h1 className=" text-base p-5 text-indigo-100">
+                {selectedEmotion.express}
+              </h1>
+            </div>
+          </div>
+          <div className="w-8/12 h-fit animated-item delay-[2s] blur-md bg-pink-900 rounded-full mx-auto mt-5">
+            <h1 className="px-12 py-4 text-justify text-pink-300">
+              {selectedEmotion.note}
+            </h1>
+          </div>
+        </>
       )}
+      <Link href={"#integration"}></Link>
     </div>
   );
 }
