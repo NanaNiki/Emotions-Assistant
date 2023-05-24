@@ -22,8 +22,8 @@ export default function Process() {
   return (
     <div
       className="relative h-screen w-screen flex flex-col justify-center" id="process">
-    <Link href="#work" className="absolute top-12 right-8 rotate-12 mt-5 w-fit mx-auto bg-pink-700 hover:bg-indigo-800 hover:delay-0 text-white rounded-full p-2 px-5 text-2xl animated-item slide-in delay-[10s] active:animate-ping"
-          > Let's do the work!</Link>
+    <Link href="#work" 
+          > <h1 className="absolute top-12 right-8 rotate-12 mt-5 w-fit mx-auto bg-pink-700 hover:bg-indigo-800 hover:delay-0 text-white rounded-full p-2 px-5 text-2xl animated-item slide-in-left delay-[10s] active:animate-bounce" >Let's do the work!</h1></Link>
       <h1 className="mt-10 animated-item show-up delay-[0.25s] text-3xl text-center font-bold">
         What does <span className="shadow-text">emotional integration</span> mean?
       </h1>

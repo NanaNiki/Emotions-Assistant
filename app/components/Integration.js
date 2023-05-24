@@ -1,9 +1,27 @@
 import data from "../questions.json";
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { observeScroll } from "../page";
+import { useState, useRef, useEffect } from "react";
+import { AiOutlinePlus, AiOutlineMinus, AiOutlinePause } from "react-icons/ai";
+import { FiPlay } from "react-icons/fi";
+import { RiEyeCloseFill } from "react-icons/ri";
+import { FaEye } from "react-icons/fa";
+import { GiHeartInside } from "react-icons/gi";
+import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
 export default function Integration() {
+  const audioRef = useRef(null);
   const [Question, setQuestion] = useState(null);
   const [Thoughts, setThoughts] = useState("");
+  const [displayTime, setDisplayTime] = useState(7 * 60);
+  const [sessionLength, setSessionLength] = useState(7);
+  const [timerOn, setTimerOn] = useState(false);
+  const [hideTimer, setHideTimer] = useState(false);
+
+  useEffect(() => {
+    const animatedItems = document.querySelectorAll(".animated-item");
+    observeScroll(animatedItems);
+  }, []);
 
   const getQuestion = () => {
     let randomNumber = Math.floor(Math.random() * data.questions.length);
@@ -13,56 +31,152 @@ export default function Integration() {
     setQuestion(data.questions[randomNumber]);
   };
 
+  const timeFormat = (time) => {
+    let minutes = Math.floor(time / 60)
+      .toString()
+      .padStart(2, "0");
+    let seconds = (time % 60).toString().padStart(2, "0");
+    return minutes + ":" + seconds;
+  };
+
+  const handleIncrementDecrement = (amount) => {
+    if (
+      (sessionLength <= 3 && amount < 1) ||
+      (sessionLength >= 15 && amount === 1)
+    ) {
+      return;
+    }
+    setSessionLength((prev) => prev + amount);
+    setDisplayTime((sessionLength + amount) * 60);
+  };
+
+  const startTimer = () => {
+    if (timerOn) {
+      clearInterval(timerOn);
+      setTimerOn(false);
+    } else if (!timerOn) {
+      let interval = setInterval(() => {
+        setDisplayTime((prev) => {
+          if (prev === 0) {
+            playAudio();
+            clearInterval(interval);
+            setHideTimer(false);
+            return prev;
+          } else {
+            return prev - 1;
+          }
+        });
+      }, 1000);
+      setTimerOn(interval);
+    }
+  };
+
+  const playAudio = () => {
+    audioRef.current.currentTime = 0;
+    audioRef.current.play();
+  };
+
+  const toogleTimerVisibility = () => {
+    setHideTimer(!hideTimer);
+  };
+
   return (
     <div className="h-screen w-screen flex flex-col" id="integration">
-      <h1 className="animated-item show-up delay-[0.5s] text-3xl text-center pt-10 shadow-text">
+      <h1 className="animated-item show-up delay-[1s] text-3xl text-center pt-16 shadow-text">
         Stream of thoughts
       </h1>
       <div className="flex flex-row w-10/12 mx-auto">
-        <h1 className="text-lg p-5 w-8/12 text-justify mx-auto">
-          Creating a space for a free stream of thoughts is a crucial step in
-          the process of integrating emotions. Let your thoughts flow without
-          judgment or restriction. It's important to let go of any inhibitions
-          or concerns about structure or coherence, and simply allow your
-          thoughts to emerge naturally.
-        </h1>
-        <h1 className="text-lg p-5 w-8/12 text-justify mx-auto">
-          Beneath you can see a timer and a space for your thoughts. If you need
-          a starter question or you will find yourself stuck feel free to
-          generate a new one. Best luck!
-        </h1>
+        <div className="flex flex-col w-8/12">
+          <h1 className="animated-item show-up delay-[1s] text-lg p-5 text-justify mx-auto text-pink-200">
+            Creating a space for a free stream of thoughts is a crucial step in
+            the process of integrating emotions. Let your thoughts flow without
+            judgment or restriction. It's important to let go of any inhibitions
+            or concerns about structure or coherence, and simply allow your
+            thoughts to emerge naturally.
+          </h1>
+        </div>
+        <div className="animated-item show-up delay-[1.5s] flex flex-col w-8/12">
+          <h1 className="text-lg p-5 text-justify mx-auto text-indigo-200">
+            Beneath you can see a timer and a space for your thoughts. If you
+            need a starter question or you will find yourself stuck, feel free
+            to generate a new one. Best luck!
+          </h1>
+          <div className="flex flex-row w-6/12 mx-auto">
+            <div
+              className={` ${
+                hideTimer ? "fade-out" : "fade-in"
+              } flex flex-row text-3xl rounded-full mx-auto p-2 text-indigo-800 outline outline-2 outline-indigo-700 `}
+            >
+              <button
+                onClick={() => handleIncrementDecrement(1)}
+                className="mx-2 text-3xl hover:-hue-rotate-60"
+              >
+                <AiOutlinePlus />
+              </button>
+              <div
+                className={` ${
+                  displayTime === 0 ? "animate-pulse" : ""
+                } text-indigo-300 w-16`}
+              >
+                {timeFormat(displayTime)}
+              </div>
+              <button
+                onClick={() => handleIncrementDecrement(-1)}
+                className="ms-5 hover:hue-rotate-60"
+              >
+                <AiOutlineMinus />
+              </button>
+              <button onClick={startTimer} className="hover:hue-rotate-30 mx-2">
+                {timerOn ? <AiOutlinePause /> : <FiPlay />}
+              </button>
+              <audio ref={audioRef} src="/_Alarm04.mp3"></audio>
+            </div>
+            <button onClick={toogleTimerVisibility} className="mx-4 text-4xl">
+              {hideTimer ? (
+                <RiEyeCloseFill className="transition-all duration-500 text-purple-900 hover:text-purple-300" />
+              ) : (
+                <FaEye className="text-indigo-800 transition-all duration-500 hover:text-indigo-400" />
+              )}
+            </button>
+          </div>
+        </div>
       </div>
       {Question ? (
         <div className="flex flex-col w-8/12 mx-auto">
           <div className="flex flex-row justify-center w-full">
             <button
               onClick={getQuestion}
-              className="bg-purple-900 rounded-full w-fit h-fit px-3 py-2 text-xl transition-all duration-300 hover:bg-pink-800 active:-hue-rotate-30"
+              className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit px-3 py-2 text-xl text-pink-200 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
             >
               New Question
             </button>
           </div>
-          <span className="bg-indigo-800 rounded-3xl text-center mx-auto mt-5 p-2 text-xl">
+          <span className="outline outline-2 outline-indigo-600 shadow-md shadow-indigo-600 rounded-3xl text-center text-indigo-200 mx-auto mt-5 p-2 px-3 text-xl">
             {Question}
           </span>
         </div>
       ) : (
         <button
           onClick={getQuestion}
-          className="bg-pink-900 rounded-full w-fit h-fit px-3 py-2 mt-5 mx-auto text-xl hover:bg-purple-900"
+          className="outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 mt-5 mx-auto text-xl shadow-md shadow-pink-600 transition duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900"
         >
           Reveal the question
         </button>
       )}
-      <div className="timer"></div>
-      <div className="flex flex-col mt-10">
+      <div className="flex flex-row mt-10 justify-center w-11/12 mx-auto">
         <input
           type="text"
           onChange={(e) => {
             setThoughts(e.target.value);
           }}
-          className="w-[60%] h-[300px] bg-indigo-300 text-indigo-900 mx-auto rounded-3xl"
+          className="w-[70%] h-[300px] bg-indigo-300 text-indigo-900 rounded-3xl ms-16"
         ></input>
+        <div className="flex flex-col ms-10 justify-end text-5xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
+          <Link href="#thankyou">
+            <GiHeartInside />
+            <HiOutlineChevronDoubleDown />
+          </Link>
+        </div>
       </div>
     </div>
   );

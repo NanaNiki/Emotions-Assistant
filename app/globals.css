@@ -22,8 +22,11 @@ html {
   }
 }
 
-.slide-in {
+.slide-in-left {
   @apply opacity-0 duration-[2s] ease-in-out blur-md transform -translate-x-full;
+}
+.slide-in-right {
+  @apply opacity-0 duration-[2s] ease-in-out blur-md transform translate-x-full;
 }
 .show-up {
   @apply opacity-0 duration-[2s] ease-in-out blur-md;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { GiBrain } from "react-icons/gi";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
@@ -9,7 +9,7 @@ export default function Work({ selectedEmotion }) {
   return (
     <div className="h-screen w-screen" id="work">
       {selectedEmotion === null ? (
-        <div className="animated-item show-up w-fit h-fit mt-20 mx-auto items-center flex">
+        <div className="animated-item show-up w-fit h-fit mt-32 mx-auto items-center flex">
           <Link
             href={"#selection"}
             className="text-center text-3xl p-2 text-pink-200 shadow-md rounded-full shadow-pink-600 transition-all duration-700 hover:bg-pink-700 hover:shadow-purple-900"

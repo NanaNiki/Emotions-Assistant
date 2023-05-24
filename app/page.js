@@ -20,6 +20,7 @@ export function observeScroll(elements) {
 export default function Home() {
   const [showPopUp, setShowPopUp] = useState(false);
   const [selectedEmotion, setSelectedEmotion] = useState(null);
+  const [countStart, setCountStart] = useState(3);
   const handleClosePopUp = () => setShowPopUp(false);
 
   useEffect(() => {
@@ -32,9 +33,10 @@ export default function Home() {
       <main
         className={`${
           showPopUp ? "opacity-40" : ""
-        } w-screen scroll-smooth overflow-hidden`}
+        } w-screen h-full scroll-smooth`}
       >
-        <Start />
+        <Start countStart={countStart} setCountStart={setCountStart}/>
+        <DynamicBreathe countStart={countStart} setCountStart={setCountStart}/>
         <DynamicEmotions />
         <DynamicSelection
           setShowPopUp={setShowPopUp}
@@ -43,12 +45,16 @@ export default function Home() {
         <DynamicProcess />
         <DynamicWork selectedEmotion={selectedEmotion} />
         <DynamicIntegration />
+        <DynamicThankyou />
       </main>
       {showPopUp && <Popup onHandleClose={handleClosePopUp} />}
     </>
   );
 }
 
+const DynamicBreathe = dynamic(() => import("./components/Breathe"), {
+  ssr: false,
+});
 const DynamicEmotions = dynamic(() => import("./components/Emotions"), {
   ssr: false,
 });
@@ -62,5 +68,8 @@ const DynamicWork = dynamic(() => import("./components/Work.js"), {
   ssr: false,
 });
 const DynamicIntegration = dynamic(() => import("./components/Integration.js"), {
+  ssr: false,
+});
+const DynamicThankyou = dynamic(() => import("./components/Thankyou.js"), {
   ssr: false,
 });
