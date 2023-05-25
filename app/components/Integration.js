@@ -95,7 +95,7 @@ export default function Integration() {
             thoughts to emerge naturally.
           </h1>
         </div>
-        <div className="animated-item show-up delay-[1.5s] flex flex-col w-8/12">
+        <div className="animated-item show-up delay-[1s] flex flex-col w-8/12">
           <h1 className="text-lg p-5 text-justify mx-auto text-indigo-200">
             Beneath you can see a timer and a space for your thoughts. If you
             need a starter question or you will find yourself stuck, feel free
@@ -133,7 +133,7 @@ export default function Integration() {
             </div>
             <button onClick={toogleTimerVisibility} className="mx-4 text-4xl">
               {hideTimer ? (
-                <RiEyeCloseFill className="transition-all duration-500 text-purple-900 hover:text-purple-300" />
+                <RiEyeCloseFill className="transition-all duration-500 text-purple-900 hover:text-purple-400" />
               ) : (
                 <FaEye className="text-indigo-800 transition-all duration-500 hover:text-indigo-400" />
               )}
@@ -164,13 +164,12 @@ export default function Integration() {
         </button>
       )}
       <div className="flex flex-row mt-10 justify-center w-11/12 mx-auto">
-        <input
-          type="text"
+        <textarea
           onChange={(e) => {
             setThoughts(e.target.value);
           }}
-          className="w-[70%] h-[300px] bg-indigo-300 text-indigo-900 rounded-3xl ms-16"
-        ></input>
+          className="w-[70%] h-[300px] p-5 bg-indigo-300 text-indigo-900 rounded-3xl ms-16 resize-none"
+        ></textarea>
         <div className="flex flex-col ms-10 justify-end text-5xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
           <Link href="#thankyou">
             <GiHeartInside />

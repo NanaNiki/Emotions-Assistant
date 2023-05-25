@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from "next/link";
+import Image from 'next/image';
 
 export default function Breathe({countStart, setCountStart}) {
   const [animationActive, setAnimationActive] = useState(true);
@@ -18,9 +19,23 @@ export default function Breathe({countStart, setCountStart}) {
   };
 
   return (
-    <div className="h-screen w-screen flex flex-col items-center" id="breathe">
+    <div className="relative h-screen w-screen flex flex-col items-center overflow--y-visible" id="breathe">
+     <Image
+            src={"blobr.svg"}
+            width={330}
+            height={400}
+            className="z-0 absolute top-1 right-0"
+            priority={true}
+          />
+           <Image
+            src={"blobl.svg"}
+            width={330}
+            height={400}
+            className="z-0 absolute bottom-0 left-0"
+            priority={true}
+          />
       <h1
-        className={`animated-item show-up text-5xl font-bold p-5 pt-10 ${
+        className={`animated-item show-up text-5xl font-bold pt-5 ${
           countStart === 0 ? "fade-out" : ""
         }`}
       >
