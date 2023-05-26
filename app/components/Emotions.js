@@ -42,11 +42,11 @@ export default function Emotions() {
   };
 
   return (
-    <div className="h-screen w-screen" id="emotions">
-      <h1 className="animated-item show-up delay-[0.5s] text-3xl text-center pt-20">
+    <div className="h-screen w-screen overflow-x-hidden" id="emotions">
+      <h1 className="animated-item show-up delay-[0.5s] sm:text-3xl text-2xl text-center sm:pt-20 pt-28 sm:px-0 px-8">
         Sometimes, emotions can be overwhelming...
       </h1>
-      <div className="animated-item show-up delay-[1s] relative">
+      <div className="animated-item show-up delay-[1s] relative sm:mt-0 mt-36">
         <div className="absolute top-1/3 right-0 flex flex-col text-3xl e-right">
           <BsFillEmojiAngryFill className="emotions-right-animation my-3 " />
           <BsFillEmojiLaughingFill className="emotions-right-animation my-3 absolute right-6 " />
@@ -66,11 +66,11 @@ export default function Emotions() {
           <BsEmojiAngryFill className="emotions-left-animation my-3 " />
         </div>
       </div>
-      <h1 className="mt-52 animated-item show-up text-3xl text-center delay-[3s]">
+      <h1 className="sm:mt-52 mt-36 animated-item show-up sm:text-3xl text-2xl text-center delay-[3s] sm:px-0 px-8">
         No worries, I'm here to break it down for You!
       </h1>
       <button
-        className={`animated-item show-up delay-[5s] flex w-screen mt-20 z-10 ${
+        className={`animated-item show-up delay-[5s] flex w-screen sm:mt-20 mt-40 z-10 ${
           animationPaused ? "pointer-event-none" : ""
         }`}
       >

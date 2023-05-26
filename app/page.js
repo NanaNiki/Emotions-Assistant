@@ -37,13 +37,13 @@ export default function Home() {
       >
         <Start countStart={countStart} setCountStart={setCountStart}/>
         <DynamicBreathe countStart={countStart} setCountStart={setCountStart}/>
-        {/* <DynamicEmotions />
+        <DynamicEmotions />
         <DynamicSelection
           setShowPopUp={setShowPopUp}
           setSelectedEmotion={setSelectedEmotion}
         />
         <DynamicProcess />
-        <DynamicWork selectedEmotion={selectedEmotion} /> */}
+        <DynamicWork selectedEmotion={selectedEmotion} />
         <DynamicIntegration />
         <DynamicThankyou />
       </main>

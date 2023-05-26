@@ -7,31 +7,31 @@ export default function Work({ selectedEmotion }) {
   const [slideDown, setSlideDown] = useState(false);
 
   return (
-    <div className="h-screen w-screen" id="work">
+    <div className="sm:h-screen h-fit w-screen" id="work">
       {selectedEmotion === null ? (
-        <div className="animated-item show-up w-fit h-fit mt-32 mx-auto items-center flex">
+        <div className="animated-item show-up sm:w-fit h-fit w-10/12 mt-32 mx-auto items-center flex">
           <Link
             href={"#selection"}
-            className="text-center text-3xl p-2 text-pink-200 shadow-md rounded-full shadow-pink-600 transition-all duration-700 hover:bg-pink-700 hover:shadow-purple-900"
+            className="text-center sm:text-3xl text-xl p-2 text-pink-200 shadow-md rounded-full shadow-pink-600 transition-all duration-700 hover:bg-pink-700 hover:shadow-purple-900"
           >
             Emotion not selcted. Please go back to Selection.
           </Link>
         </div>
       ) : (
         <>
-          <h1 className="text-3xl text-center pt-12">
+          <h1 className="sm:text-3xl text-xl text-center sm:pt-12 pt-6">
             Let's work on:{" "}
             <span className="shadow-text font-bold">
               {selectedEmotion.name}
             </span>
           </h1>
-          <h1 className="text-xl p-5 w-8/12 font-bold text-justify mx-auto">
+          <h1 className="sm:text-xl text-sm sm:p-5 sm:py-0 py-5 sm:w-8/12 h-fit w-10/12 font-bold text-justify mx-auto">
             {selectedEmotion.text}
           </h1>
-          <div className="flex flex-row w-10/12 mx-auto">
+          <div className="flex sm:flex-row flex-col sm:w-10/12 w-11/12 h-[70%] mx-auto overflow-y-scroll">
             <div onMouseLeave={() => setSlideDown(true)}
-            className="has-animation relative flex flex-col m-5 bg-indigo-500 rounded-3xl overflow-hidden">
-              <h1 className="text-base p-5 text-indigo-100 selection:bg-pink-600 selection:text-pink-100">
+            className="has-animation relative flex flex-col sm:m-5  bg-indigo-500 rounded-3xl">
+              <h1 className="sm:text-base text-sm p-5 text-indigo-100 selection:bg-pink-600 selection:text-pink-100">
                 {selectedEmotion.feel}
               </h1>
               <div
@@ -42,9 +42,8 @@ export default function Work({ selectedEmotion }) {
                 </h1>
               </div>
             </div>
-
             <div onMouseLeave={() => setSlideDown(true)}
-             className="has-animation relative flex flex-col m-5 bg-indigo-500 rounded-3xl overflow-hidden" >
+             className="has-animation relative flex flex-col sm:m-5 sm:mt-0 mt-5 bg-indigo-500 rounded-3xl overflow-hidden" >
               <h1 className="text-base p-5 text-indigo-100 selection:bg-pink-600 selection:text-pink-100">
                 {selectedEmotion.express}
               </h1>
@@ -57,13 +56,14 @@ export default function Work({ selectedEmotion }) {
               </div>
             </div>
           </div>
-          <div className="flex flex-row w-10/12 mx-auto mt-5 justify-around">
-            <div className="h-fit mx-4 rounded-full outline outline-2 outline-pink-700 shadow transition duration-1000 hover:bg-pink-900 hover:shadow-lg hover:shadow-pink-900 ">
-              <h1 className="px-10 py-4 text-justify text-pink-300">
+
+          <div className="flex sm:flex-row flex-col sm:w-10/12 mx-auto mt-5 justify-around">
+            <div className="h-fit mx-4 sm:rounded-full rounded-3xl outline outline-2 outline-pink-700 shadow transition duration-1000 hover:bg-pink-900 hover:shadow-lg hover:shadow-pink-900 ">
+              <h1 className="sm:px-10 px-4 py-4 text-justify text-pink-300">
                 {selectedEmotion.note}
               </h1>
             </div>
-            <div className="flex flex-col mx-3 justify-center text-5xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
+            <div className="flex flex-col sm:mx-3 sm:mt-0 mx-auto mt-6 justify-center text-5xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
               <Link href={"#integration"}>
                 <GiBrain />
                 <HiOutlineChevronDoubleDown />

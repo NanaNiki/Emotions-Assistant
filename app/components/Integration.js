@@ -81,13 +81,13 @@ export default function Integration() {
   };
 
   return (
-    <div className="h-screen w-screen flex flex-col" id="integration">
+    <div className="sm:h-screen h-fit w-screen flex flex-col" id="integration">
       <h1 className="animated-item show-up delay-[1s] text-3xl text-center pt-16 shadow-text">
         Stream of thoughts
       </h1>
-      <div className="flex flex-row w-10/12 mx-auto">
-        <div className="flex flex-col w-8/12">
-          <h1 className="animated-item show-up delay-[1s] text-lg p-5 text-justify mx-auto text-pink-200">
+      <div className="flex sm:flex-row flex-col sm:w-10/12 w-11/12 mx-auto">
+        <div className="flex flex-col sm:w-8/12 w-full">
+          <h1 className="animated-item show-up delay-[1s] sm:text-lg text-sm p-5 sm:pb-5 pb-0 text-justify mx-auto text-pink-200">
             Creating a space for a free stream of thoughts is a crucial step in
             the process of integrating emotions. Let your thoughts flow without
             judgment or restriction. It's important to let go of any inhibitions
@@ -95,13 +95,13 @@ export default function Integration() {
             thoughts to emerge naturally.
           </h1>
         </div>
-        <div className="animated-item show-up delay-[1s] flex flex-col w-8/12">
-          <h1 className="text-lg p-5 text-justify mx-auto text-indigo-200">
+        <div className="animated-item show-up delay-[1s] flex flex-col sm:w-8/12 w-full">
+          <h1 className="sm:text-lg text-sm p-5 text-justify mx-auto text-indigo-200">
             Beneath you can see a timer and a space for your thoughts. If you
             need a starter question or you will find yourself stuck, feel free
             to generate a new one. Best luck!
           </h1>
-          <div className="flex flex-row w-6/12 mx-auto">
+          <div className="flex flex-row sm:w-6/12 w-10/12 sm:mb-0 mx-auto">
             <div
               className={` ${
                 hideTimer ? "fade-out" : "fade-in"
@@ -142,35 +142,35 @@ export default function Integration() {
         </div>
       </div>
       {Question ? (
-        <div className="flex flex-col w-8/12 mx-auto">
+        <div className="flex flex-col sm:w-8/12 w-10/12 mx-auto sm:mt-0 mt-5">
           <div className="flex flex-row justify-center w-full">
             <button
               onClick={getQuestion}
-              className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit px-3 py-2 text-xl text-pink-200 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
+              className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit px-3 py-2 sm:text-xl text-pink-200 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
             >
               New Question
             </button>
           </div>
-          <span className="outline outline-2 outline-indigo-600 shadow-md shadow-indigo-600 rounded-3xl text-center text-indigo-200 mx-auto mt-5 p-2 px-3 text-xl">
+          <span className="outline outline-2 outline-indigo-600 shadow-md shadow-indigo-600 rounded-3xl text-center text-indigo-200 mx-auto mt-5 p-2 px-3 sm:text-xl text-base">
             {Question}
           </span>
         </div>
       ) : (
         <button
           onClick={getQuestion}
-          className="outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 mt-5 mx-auto text-xl shadow-md shadow-pink-600 transition duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900"
+          className="outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 sm:mt-5 mx-auto sm:text-xl shadow-md shadow-pink-600 transition duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900"
         >
           Reveal the question
         </button>
       )}
-      <div className="flex flex-row mt-10 justify-center w-11/12 mx-auto">
+      <div className="flex sm:flex-row flex-col sm:mt-10 mt-5 justify-center w-11/12 mx-auto">
         <textarea
           onChange={(e) => {
             setThoughts(e.target.value);
           }}
-          className="w-[70%] h-[300px] p-5 bg-indigo-300 text-indigo-900 rounded-3xl ms-16 resize-none"
+          className="sm:w-[70%] w-[95%] sm:h-[300px] h-[400px] p-5 bg-indigo-300 text-indigo-900 rounded-3xl sm:ms-16 sm:mx-0 mx-auto resize-none"
         ></textarea>
-        <div className="flex flex-col ms-10 justify-end text-5xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
+        <div className="flex flex-col sm:ms-10 sm:mx-0 mx-auto sm:mt-0 mt-5 justify-end sm:text-5xl text-4xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
           <Link href="#thankyou">
             <GiHeartInside />
             <HiOutlineChevronDoubleDown />

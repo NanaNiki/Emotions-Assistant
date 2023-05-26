@@ -25,14 +25,15 @@ export default function Selection({ setShowPopUp, setSelectedEmotion }) {
   return (
     <>
       <div
-        className="h-screen w-screen flex flex-col justify-center"
+        className="h-screen w-screen flex flex-col justify-center overflow-y-hidden sm:py-0 py-5"
         id="selection"
       >
-        <h1 className="animated-item show-up delay-[0.5s] text-3xl text-center">
+        <h1 className="animated-item show-up delay-[0.5s] sm:text-3xl text-2xl text-center px-8">
           Please select one emotion You are feeling right now.
         </h1>
-        <div className="flex flex-row py-8 justify-center align-middle">
-          <h1 className="text-3xl">Today I am feeling</h1>
+        <div className="flex sm:flex-row flex-col py-8 justify-center align-middle mx-auto">
+          <h1 className="sm:text-3xl text-2xl sm:mx-0 mx-auto">Today I am feeling</h1>
+          <div className="flex flex-row">
           <form onSubmit={handleFormSubmit} className="mx-4">
             <input
               type="text"
@@ -51,9 +52,10 @@ export default function Selection({ setShowPopUp, setSelectedEmotion }) {
           >
             <BsCheckLg />
           </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-6 px-5 w-fit mx-auto">
+        <div className="grid sm:grid-cols-6 grid-cols-3 px-5 w-fit mx-auto overflow-y-scroll ">
           {emotionsData.map((emotion) => {
             const markedName = emotion.name.split("").map((letter, index) => {
               const isSelected =
