@@ -21,13 +21,13 @@ export default function Start({ countStart, setCountStart }) {
 
   return (
     <>
-    <div className="flex flex-col items-center sm:text-start text-center justify-evenly h-screen w-screen font-bold overflow-hidden">
+    <div className="flex flex-col items-center md:text-start text-center justify-evenly h-screen w-screen font-bold overflow-hidden">
     <div className="overflow-visible">
           <Image
             src={"btl.svg"}
             width={400}
             height={400}
-            className="z-0 sm:absolute -top-24 -left-24 hidden sm:visible"
+            className="z-0 sm:absolute -top-24 -left-24 hidden md:inline"
             priority={true}
           />
           <Image
@@ -48,7 +48,7 @@ export default function Start({ countStart, setCountStart }) {
             src={"bbr.svg"}
             width={400}
             height={400}
-            className="z-0 sm:absolute -bottom-0 right-0 hidden sm:visible"
+            className="z-0 sm:absolute -bottom-0 right-0 hidden md:inline"
             priority={true}
           />
         </div>

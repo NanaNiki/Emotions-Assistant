@@ -42,11 +42,11 @@ export default function Breathe({countStart, setCountStart}) {
         {countStart}
       </h1>
       <div className="flex justify-center items-center w-full h-full my-auto">
-        <div className="absolute sm:w-[250px] sm:h-[250px] w-[120px] h-[120px] bg-indigo-500 rounded-full"></div>
+        <div className="absolute md:w-[250px] md:h-[250px] sm:w-[150px] sm:h-[150px] w-[120px] h-[120px] bg-indigo-500 rounded-full"></div>
         <div
           className={` ${
             countStart === 0 ? "breathe-animation" : ""
-          } absolute sm:w-[700px] sm:h-[700px] w-[336px] h-[336px] bg-indigo-400 bg-opacity-30 opacity-[0.4] scale-[0.4] hue-rotate-30 rounded-full`}
+          } absolute md:w-[700px] md:h-[700px] sm:w-[420px] sm:h-[420px] w-[336px] h-[336px] bg-indigo-400 bg-opacity-30 opacity-[0.4] scale-[0.4] hue-rotate-30 rounded-full`}
         ></div>
         <Link
           href="#emotions"

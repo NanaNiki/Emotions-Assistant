@@ -32,7 +32,7 @@ export default function Selection({ setShowPopUp, setSelectedEmotion }) {
           Please select one emotion You are feeling right now.
         </h1>
         <div className="flex sm:flex-row flex-col py-8 justify-center align-middle mx-auto">
-          <h1 className="sm:text-3xl text-2xl sm:mx-0 mx-auto">Today I am feeling</h1>
+          <h1 className="sm:text-3xl text-2xl sm:mx-0 mx-auto sm:mb-0 mb-2">Today I am feeling</h1>
           <div className="flex flex-row">
           <form onSubmit={handleFormSubmit} className="mx-4">
             <input

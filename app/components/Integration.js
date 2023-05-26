@@ -81,8 +81,8 @@ export default function Integration() {
   };
 
   return (
-    <div className="sm:h-screen h-fit w-screen flex flex-col" id="integration">
-      <h1 className="animated-item show-up delay-[1s] text-3xl text-center pt-16 shadow-text">
+    <div className="lg:h-screen h-fit w-screen flex flex-col" id="integration">
+      <h1 className="animated-item show-up delay-[1s] text-3xl text-center sm:pt-16 pt-6 shadow-text">
         Stream of thoughts
       </h1>
       <div className="flex sm:flex-row flex-col sm:w-10/12 w-11/12 mx-auto">
@@ -101,7 +101,7 @@ export default function Integration() {
             need a starter question or you will find yourself stuck, feel free
             to generate a new one. Best luck!
           </h1>
-          <div className="flex flex-row sm:w-6/12 w-10/12 sm:mb-0 mx-auto">
+          <div className="flex flex-row md:w-6/12 w-10/12 mx-auto">
             <div
               className={` ${
                 hideTimer ? "fade-out" : "fade-in"
@@ -142,7 +142,7 @@ export default function Integration() {
         </div>
       </div>
       {Question ? (
-        <div className="flex flex-col sm:w-8/12 w-10/12 mx-auto sm:mt-0 mt-5">
+        <div className="flex flex-col md:w-8/12 w-10/12 mx-auto sm:mt-0 mt-5">
           <div className="flex flex-row justify-center w-full">
             <button
               onClick={getQuestion}
@@ -158,19 +158,19 @@ export default function Integration() {
       ) : (
         <button
           onClick={getQuestion}
-          className="outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 sm:mt-5 mx-auto sm:text-xl shadow-md shadow-pink-600 transition duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900"
+          className="outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 mt-5 mx-auto sm:text-xl shadow-md shadow-pink-600 transition duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900"
         >
           Reveal the question
         </button>
       )}
-      <div className="flex sm:flex-row flex-col sm:mt-10 mt-5 justify-center w-11/12 mx-auto">
+      <div className="flex md:flex-row flex-col sm:mt-10 mt-5 justify-center w-11/12 mx-auto">
         <textarea
           onChange={(e) => {
             setThoughts(e.target.value);
           }}
-          className="sm:w-[70%] w-[95%] sm:h-[300px] h-[400px] p-5 bg-indigo-300 text-indigo-900 rounded-3xl sm:ms-16 sm:mx-0 mx-auto resize-none"
+          className="md:w-[70%] md:h-[300px] w-[95%] h-[400px] p-5 bg-indigo-300 text-indigo-900 rounded-3xl md:ms-16 md:mx-0 mx-auto resize-none"
         ></textarea>
-        <div className="flex flex-col sm:ms-10 sm:mx-0 mx-auto sm:mt-0 mt-5 justify-end sm:text-5xl text-4xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
+        <div className="flex flex-col md:ms-10 md:mx-0 mx-auto md:mt-0 mt-5 justify-end sm:text-5xl text-4xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
           <Link href="#thankyou">
             <GiHeartInside />
             <HiOutlineChevronDoubleDown />
