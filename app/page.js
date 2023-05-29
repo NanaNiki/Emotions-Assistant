@@ -1,3 +1,11 @@
+/**
+ * This is a Next.js page component that renders various components based on user interactions and uses
+ * dynamic imports for code splitting.
+ * @param elements - The `elements` parameter is an array of DOM elements that we want to observe for
+ * intersection changes using the `IntersectionObserver` API. The `observeScroll` function takes this
+ * array as input and adds an observer to each element in the array. When an observed element
+ * intersects with the viewport, the observer adds the class 'show' to the element.
+ */
 "use client";
 import dynamic from "next/dynamic.js";
 import Start from "./components/Start.js";

@@ -1,3 +1,9 @@
+/**
+ * The function displays a process of emotional integration with three steps and allows the user to
+ * switch between them, in smaller screen size screen size.
+ * @returns The component `Process` is being returned, which contains JSX elements and logic to display
+ * and handle the steps of emotional integration.
+ */
 import Link from "next/link";
 import { useState } from "react";
 

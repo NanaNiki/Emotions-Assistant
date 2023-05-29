@@ -1,3 +1,11 @@
+/**
+ * This is a React component that displays a selection of emotions and allows the user to search for
+ * and select an emotion.
+ * @returns A React component that renders a selection screen for emotions, including a search bar and
+ * a grid of emotion icons to choose from. When an emotion is selected, it sets the selected emotion
+ * state and navigates to a section with the id "process". If the entered emotion is not found in the
+ * emotionsData array, it shows a pop-up.
+ */
 import emotionsData from "../emotions.json";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -54,6 +62,14 @@ export default function Selection({ setShowPopUp, setSelectedEmotion }) {
           </button>
           </div>
         </div>
+
+        {/** LEARNING NOTE       
+          * emotion.name.substring(0, searchEmotion.length): 
+          This line extracts a substring from the emotion.name starting at index 0 and with a length equal to the length of the searchEmotion. 
+          It ensures that we only compare the portion of the emotion name that matches the length of the search input.
+          * index < searchEmotion.length: 
+          This condition ensures that only the letters up to the length of the searchEmotion are marked. 
+          It restricts the marking to the characters that have been typed in the search input. */}
 
         <div className="grid sm:grid-cols-6 grid-cols-3 px-5 w-fit mx-auto overflow-y-scroll ">
           {emotionsData.map((emotion) => {

@@ -1,8 +1,15 @@
-import { useState, useEffect } from 'react';
+/**
+ * This is a React component that displays a breathing animation and a countdown, and a button 
+ * that allows the user to go to next step, rendered accordingly to the state of breathing animation.
+ * @returns A React component for a breathing exercise with animations and a button to proceed to the
+ * next step. It includes two blob images, a countdown timer, and a circular animation that expands and
+ * contracts.
+ */
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from 'next/image';
+import Image from "next/image";
 
-export default function Breathe({countStart, setCountStart}) {
+export default function Breathe({ countStart, setCountStart }) {
   const [animationActive, setAnimationActive] = useState(true);
 
   useEffect(() => {
@@ -19,23 +26,26 @@ export default function Breathe({countStart, setCountStart}) {
   };
 
   return (
-    <div className="relative h-screen w-screen flex flex-col items-center overflow-x-hidden" id="breathe">
-     <Image
-            src={"blobr.svg"}
-            width={330}
-            height={400}
-            className="z-0 absolute top-0 sm:right-0 -right-10"
-            priority={true}
-            alt="blob of light blue shades"  
-          />
-           <Image
-            src={"blobl.svg"}
-            width={330}
-            height={400}
-            className="z-0 absolute bottom-0 sm:left-0 -left-10"
-            priority={true}
-            alt="blob of light blue shades"  
-          />
+    <div
+      className="relative h-screen w-screen flex flex-col items-center overflow-x-hidden"
+      id="breathe"
+    >
+      <Image
+        src={"images/blobr.svg"}
+        width={330}
+        height={400}
+        className="z-0 absolute top-0 sm:right-0 -right-10"
+        priority={true}
+        alt="blob of light blue shades"
+      />
+      <Image
+        src={"images/blobl.svg"}
+        width={330}
+        height={400}
+        className="z-0 absolute bottom-0 sm:left-0 -left-10"
+        priority={true}
+        alt="blob of light blue shades"
+      />
       <h1
         className={`animated-item show-up sm:text-5xl  text-3xl font-bold pt-5 ${
           countStart === 0 ? "fade-out" : ""

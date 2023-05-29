@@ -1,3 +1,9 @@
+/**
+ * The Thankyou function is a React component that displays a message of gratitude and provides
+ * resources for seeking professional help, as well as options to start a new emotional process or
+ * download a report generated from app-data in pdf form.
+ * @returns A React component is being returned.
+ */
 import { Caveat } from "next/font/google";
 import { BsFillTelephoneFill, BsFillChatTextFill } from "react-icons/bs";
 import { GiHeartInside, GiBrain } from "react-icons/gi";

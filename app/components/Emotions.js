@@ -1,4 +1,11 @@
-import { useEffect, useState } from "react";
+/**
+ * The Emotions function displays animated emojis and a message about emotions, and a button 
+ * that allows the user to go to next step, pausing the animation and waiting 1.5s before taking 
+ * the user to next step, for the more dramatic effect.
+ * @returns A React component that displays a section about emotions with animated emojis and a button
+ * to pause the animation, and take the user to the next step.
+ */
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { observeScroll } from "../page";
 import {
@@ -20,7 +27,6 @@ import { GiMeditation } from "react-icons/gi";
 
 export default function Emotions() {
   const router = useRouter();
-  const [animationPaused, setAnimationPaused] = useState(false);
 
   useEffect(() => {
     const animatedItems = document.querySelectorAll(".animated-item");
@@ -34,7 +40,6 @@ export default function Emotions() {
     elements.forEach((element) => {
       element.classList.add("pause");
     });
-    setAnimationPaused(true);
 
     setTimeout(() => {
       router.push("#selection");
@@ -70,9 +75,7 @@ export default function Emotions() {
         No worries, I'm here to break it down for You!
       </h1>
       <button
-        className={`animated-item show-up delay-[5s] flex w-screen md:mt-20 mt-40 z-10 ${
-          animationPaused ? "pointer-event-none" : ""
-        }`}
+        className="animated-item show-up delay-[5s] flex w-screen md:mt-20 mt-40 z-10"
       >
         <GiMeditation
           onClick={() => pauseAnimation()}

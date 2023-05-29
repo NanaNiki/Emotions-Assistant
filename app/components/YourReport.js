@@ -1,3 +1,9 @@
+/**
+ * This is a React component that generates a PDF report based on selected emotions and thoughts 
+ * from states being passed as props.
+ * @returns The `YourReport` component is being returned, which renders a PDF document with selected
+ * emotion and thoughts.
+ */
 import {
   Page,
   Text,
@@ -59,7 +65,7 @@ export default function YourReport({ selectedEmotion, thoughts }) {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <Image src={"/pdftop.png"} style={styles.imagetop} fixed={true}></Image>
+        <Image src={"images/pdftop.png"} style={styles.imagetop} fixed={true}></Image>
         <View style={styles.wrapper}>
         <View style={styles.section}>
           <Text style={styles.title}>
@@ -74,7 +80,7 @@ export default function YourReport({ selectedEmotion, thoughts }) {
           <Text style={styles.title}> My reflections:</Text>
           <Text style={styles.text}>{thoughts}</Text>
         </View>
-        <Image src={"/pdfbot.png"} style={styles.imagebot} fixed={true}></Image>
+        <Image src={"images/pdfbot.png"} style={styles.imagebot} fixed={true}></Image>
         </View>
       </Page>
     </Document>

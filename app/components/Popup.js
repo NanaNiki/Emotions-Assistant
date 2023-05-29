@@ -1,3 +1,10 @@
+/**
+ * This is a React component that renders a popup with a message and options for selecting an emotion.
+ * @returns A React component that renders a popup with a message and a close button. The popup has a
+ * fixed position and a rounded shape, and it is styled with various classes from the Tailwind CSS
+ * library. The popup also includes an icon from the React Icons library. The component takes a prop
+ * called onHandleClose, which is a function that will be called when the close button is clicked.
+ */
 import { RxCross1 } from "react-icons/rx";
 
 export default function Popup({ onHandleClose }) {

@@ -1,3 +1,11 @@
+/**
+ * The Integration function is a React component that displays a timer and a space for users to write
+ * their thoughts, with the option to generate a random question as a prompt.
+ * @returns The code exports a React component named "Integration" that renders a page with a timer, a
+ * space for the user's thoughts, and a button to generate a random question. The component also
+ * includes functions to handle the timer, generate a new question, and format the time. The component
+ * receives a prop named "setThoughts" that is used to update the state of the user's thoughts.
+ */
 import data from "../questions.json";
 import Link from "next/link";
 import { observeScroll } from "../page";
