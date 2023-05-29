@@ -26,6 +26,7 @@ export default function Breathe({countStart, setCountStart}) {
             height={400}
             className="z-0 absolute top-0 sm:right-0 -right-10"
             priority={true}
+            alt="blob of light blue shades"  
           />
            <Image
             src={"blobl.svg"}
@@ -33,6 +34,7 @@ export default function Breathe({countStart, setCountStart}) {
             height={400}
             className="z-0 absolute bottom-0 sm:left-0 -left-10"
             priority={true}
+            alt="blob of light blue shades"  
           />
       <h1
         className={`animated-item show-up sm:text-5xl  text-3xl font-bold pt-5 ${

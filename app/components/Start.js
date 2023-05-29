@@ -29,6 +29,7 @@ export default function Start({ countStart, setCountStart }) {
             height={400}
             className="z-0 sm:absolute -top-24 -left-24 hidden md:inline"
             priority={true}
+            alt="blob of pink and purple shades"
           />
           <Image
             src={"btr.svg"}
@@ -36,13 +37,15 @@ export default function Start({ countStart, setCountStart }) {
             height={400}
             className="z-0 absolute top-0 right-0"
             priority={true}
+            alt="blob of pink and purple shades"
           />
           <Image
             src={"bbl.svg"}
             width={390}
             height={400}
             className="z-0 absolute sm:-bottom-0 sm:-left-20 bottom-2 -left-20"
-            priority={true}         
+            priority={true} 
+            alt="blob of violet and light blue shades"        
            />
           <Image
             src={"bbr.svg"}
@@ -50,6 +53,7 @@ export default function Start({ countStart, setCountStart }) {
             height={400}
             className="z-0 sm:absolute -bottom-0 right-0 hidden md:inline"
             priority={true}
+            alt="blob of violet and light blue shades"  
           />
         </div>
       <h1 className="animated-item show-up delay-[2s] sm:text-5xl text-3xl">

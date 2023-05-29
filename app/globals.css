@@ -7,15 +7,6 @@ html {
   scroll-behavior: smooth !important;
 }
 
-/* @layer utilities {
-  ::-webkit-scrollbar {
-    @apply w-2 h-2 bg-transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-blue-500 bg-opacity-30;
-  }
-} */
-
 @layer utilities {
   ::-webkit-scrollbar {
     @apply hidden;
@@ -24,9 +15,6 @@ html {
 
 .slide-in-left {
   @apply opacity-0 duration-[2s] ease-in-out blur-md transform -translate-x-full;
-}
-.slide-in-right {
-  @apply opacity-0 duration-[2s] ease-in-out blur-md transform translate-x-full;
 }
 .show-up {
   @apply opacity-0 duration-[2s] ease-in-out blur-md;
@@ -95,7 +83,6 @@ html {
     filter: blur(2px);
   }
 }
-
 @keyframes emotions-left {
   0% {
     opacity: 0;
@@ -119,6 +106,7 @@ html {
     filter: blur(2px);
   }
 }
+
 .e-right svg:nth-child(2) {
   animation-delay: 2s;
 }
@@ -170,13 +158,6 @@ html {
     filter: hue-rotate(0deg);
   }
 }
-.has-animation:hover .uncover-animation {
-  animation: uncover 210ms ease-in-out forwards;
-}
-.has-animation:hover .cover-animation {
-  animation: cover 210ms ease-in-out forwards;
-}
-
 @keyframes cover {
   0% {
     opacity: 1;
@@ -190,6 +171,13 @@ html {
     filter: hue-rotate(45deg);
   }
 }
+
+.has-animation:hover .uncover-animation {
+  animation: uncover 210ms ease-in-out forwards;
+}
+.has-animation:hover .cover-animation {
+  animation: cover 210ms ease-in-out forwards;
+}
 .shadow-text {
   text-shadow: 2px 3px 2px rgb(196, 15, 142);
 }
@@ -202,14 +190,6 @@ html {
     transform: translateY(-110%);
   }
 }
-
-.has-animation:hover .slideup-animation{
-  animation: slideup 1.5s ease-in-out forwards;
-}
-
-.slidedown-animation{
-  animation: slidedown 1.5s ease-in-out forwards;
-}
 @keyframes slidedown {
   0% {
     transform: translateY(-110%);    
@@ -217,4 +197,11 @@ html {
   100% {
     transform: translateY(0%);
   }
+}
+
+.has-animation:hover .slideup-animation{
+  animation: slideup 1.5s ease-in-out forwards;
+}
+.slidedown-animation{
+  animation: slidedown 1.5s ease-in-out forwards;
 }

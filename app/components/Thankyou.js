@@ -5,10 +5,12 @@ import { RiMentalHealthFill } from "react-icons/ri";
 import Link from "next/link";
 import { useEffect } from "react";
 import { observeScroll } from "../page";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import YourReport from "./YourReport";
 
-const caveat = Caveat({ subsets: ["latin-ext"], weight: ["400"] });
+const caveat = Caveat({ subsets: ["latin-ext"], weight: ["400"], preload: false });
 
-export default function Thankyou() {
+export default function Thankyou({ selectedEmotion, thoughts }) {
   useEffect(() => {
     const animatedItems = document.querySelectorAll(".animated-item");
     observeScroll(animatedItems);
@@ -83,9 +85,21 @@ export default function Thankyou() {
           >
             Start a new process
           </button>
-          <button className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
-            Get my report
-          </button>
+          {selectedEmotion ? ( <PDFDownloadLink
+            document={<YourReport selectedEmotion={selectedEmotion} thoughts={thoughts} />}
+           fileName={`${selectedEmotion.name}.pdf`} as="style"
+          >
+            <button className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
+              Get my report
+            </button>
+          </PDFDownloadLink> ) 
+          : <Link
+            href={"#selection"}
+            className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
+              No report
+            </Link>
+          }
+          
         </div>
       </div>
     </div>

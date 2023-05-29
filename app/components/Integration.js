@@ -9,10 +9,9 @@ import { FaEye } from "react-icons/fa";
 import { GiHeartInside } from "react-icons/gi";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
-export default function Integration() {
+export default function Integration({setThoughts}) {
   const audioRef = useRef(null);
   const [Question, setQuestion] = useState(null);
-  const [Thoughts, setThoughts] = useState("");
   const [displayTime, setDisplayTime] = useState(7 * 60);
   const [sessionLength, setSessionLength] = useState(7);
   const [timerOn, setTimerOn] = useState(false);
