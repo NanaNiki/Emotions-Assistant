@@ -35,19 +35,19 @@ export default function Thankyou({ selectedEmotion, thoughts }) {
         </h1>
         <div className="flex flex-row md:mt-3 mt-0">
           <GiBrain className="flex flex-col ms-10 justify-end text-5xl text-pink-700" />
-          <div className="animated-item slide-in-left delay-[2s] w-9/12 h-[1px] bg-pink-700 shadow-md shadow-pink-400 m-auto"></div>
+          <div className="animated-item slide-in-left delay-[3s] w-9/12 h-[1px] bg-pink-700 shadow-md shadow-pink-400 m-auto"></div>
           <GiHeartInside className="flex flex-col me-10 justify-end text-5xl text-pink-700" />
         </div>
 
         <div className="flex md:flex-row flex-col md:mt-10 mt-3">
-          <h1 className="md:w-8/12 sm:px-5 py-3 animated-item show-up delay-[4s] sm:text-xl text-justify font-bold mx-auto">
+          <h1 className="md:w-8/12 sm:px-5 py-3 animated-item show-up delay-[5s] sm:text-xl text-justify font-bold mx-auto">
             Remember, this app is not a substitute for professional help. It's
             important to seek the guidance of qualified professionals who can
             provide personalized support for your well-being. You're not alone
             in this journey, and there are resources available to provide the
             support and care you deserve.
           </h1>
-          <div className="flex flex-col md:mx-0 sm:my-3 md:my-0 mx-auto sm:text-xl text-base font-bold text-indigo-400 animated-item show-up sm:delay-[8s] delay-[5s]">
+          <div className="flex flex-col md:mx-0 sm:my-3 md:my-0 mx-auto sm:text-xl text-base font-bold text-indigo-400 animated-item show-up sm:delay-[8s] delay-[7s]">
             <Link
               href={"https://buddyhelp.org/chat/"}
               passHref={true}

@@ -94,7 +94,7 @@ export default function Integration({setThoughts}) {
       </h1>
       <div className="flex sm:flex-row flex-col sm:w-10/12 w-11/12 mx-auto">
         <div className="flex flex-col sm:w-8/12 w-full">
-          <h1 className="animated-item show-up delay-[1s] sm:text-lg text-sm p-5 sm:pb-5 pb-0 text-justify mx-auto text-pink-200">
+          <h1 className="animated-item show-up delay-[0.5s] sm:text-lg text-sm p-5 sm:pb-5 pb-0 text-justify mx-auto text-pink-200">
             Creating a space for a free stream of thoughts is a crucial step in
             the process of integrating emotions. Let your thoughts flow without
             judgment or restriction. It's important to let go of any inhibitions
@@ -102,7 +102,7 @@ export default function Integration({setThoughts}) {
             thoughts to emerge naturally.
           </h1>
         </div>
-        <div className="animated-item show-up delay-[1s] flex flex-col sm:w-8/12 w-full">
+        <div className="animated-item show-up delay-[0.5s] flex flex-col sm:w-8/12 w-full">
           <h1 className="sm:text-lg text-sm p-5 text-justify mx-auto text-indigo-200">
             Beneath you can see a timer and a space for your thoughts. If you
             need a starter question or you will find yourself stuck, feel free
