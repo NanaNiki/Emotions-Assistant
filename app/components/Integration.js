@@ -19,7 +19,7 @@ import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
 export default function Integration({setThoughts}) {
   const audioRef = useRef(null);
-  const [Question, setQuestion] = useState(null);
+  const [question, setQuestion] = useState(null);
   const [displayTime, setDisplayTime] = useState(7 * 60);
   const [sessionLength, setSessionLength] = useState(7);
   const [timerOn, setTimerOn] = useState(false);
@@ -32,7 +32,7 @@ export default function Integration({setThoughts}) {
 
   const getQuestion = () => {
     let randomNumber = Math.floor(Math.random() * data.questions.length);
-    while (randomNumber === Question) {
+    while (randomNumber === question) {
       randomNumber = Math.floor(Math.random() * data.questions.length);
     }
     setQuestion(data.questions[randomNumber]);
@@ -148,7 +148,7 @@ export default function Integration({setThoughts}) {
           </div>
         </div>
       </div>
-      {Question ? (
+      {question ? (
         <div className="flex flex-col md:w-8/12 w-10/12 mx-auto sm:mt-0 mt-5">
           <div className="flex flex-row justify-center w-full">
             <button
@@ -159,7 +159,7 @@ export default function Integration({setThoughts}) {
             </button>
           </div>
           <span className="outline outline-2 outline-indigo-600 shadow-md shadow-indigo-600 rounded-3xl text-center text-indigo-200 mx-auto mt-5 p-2 px-3 sm:text-xl text-base">
-            {Question}
+            {question}
           </span>
         </div>
       ) : (
@@ -178,7 +178,7 @@ export default function Integration({setThoughts}) {
           className="md:w-[70%] md:h-[300px] w-[95%] h-[400px] p-5 bg-indigo-300 text-indigo-900 rounded-3xl md:ms-16 md:mx-0 mx-auto resize-none"
         ></textarea>
         <div className="flex flex-col md:ms-10 md:mx-0 mx-auto md:mt-0 mt-5 justify-end sm:text-5xl text-4xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
-          <Link href="#thankyou">
+          <Link href="#closure">
             <GiHeartInside />
             <HiOutlineChevronDoubleDown />
           </Link>

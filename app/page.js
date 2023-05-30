@@ -32,6 +32,7 @@ export default function Home() {
   const [selectedEmotion, setSelectedEmotion] = useState(null);
   const [countStart, setCountStart] = useState(3);
   const [thoughts, setThoughts] = useState("");
+  const [affirmation, setAffirmation] = useState(null);
   const handleClosePopUp = () => setShowPopUp(false);
 
   useEffect(() => {
@@ -56,7 +57,8 @@ export default function Home() {
         <DynamicProcess />
         <DynamicWork selectedEmotion={selectedEmotion} />
         <DynamicIntegration setThoughts={setThoughts} />
-        <DynamicThankyou selectedEmotion={selectedEmotion} thoughts={thoughts} />
+        <DynamicClosure selectedEmotion={selectedEmotion} affirmation={affirmation} setAffirmation={setAffirmation} />
+        <DynamicThankyou selectedEmotion={selectedEmotion} thoughts={thoughts} affirmation={affirmation} />
       </main>
       {showPopUp && <Popup onHandleClose={handleClosePopUp} />}
     </>
@@ -73,6 +75,9 @@ const DynamicWork = dynamic(() => import("./components/Work.js"), {
   ssr: false,
 });
 const DynamicIntegration = dynamic(() => import("./components/Integration.js"), {
+  ssr: false,
+});
+const DynamicClosure = dynamic(() => import("./components/Closure.js"), {
   ssr: false,
 });
 const DynamicThankyou = dynamic(() => import("./components/Thankyou.js"), {

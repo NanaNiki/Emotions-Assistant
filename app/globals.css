@@ -22,11 +22,33 @@ html {
 .show {
   @apply opacity-100 blur-none translate-x-0;
 }
-.fade-in {
-  @apply opacity-100 blur-none duration-[1s];
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
 }
-.fade-out {
-  @apply opacity-0 blur-md duration-[2s];
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(12px);
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.5s ease-in-out forwards;
+}
+.fade-out{
+  animation: fade-out 1.5s ease-in-out forwards;
 }
 
 @keyframes breathe {
@@ -184,7 +206,7 @@ html {
 
 @keyframes slideup {
   0% {
-    transform: translateY(0%);    
+    transform: translateY(0%);
   }
   100% {
     transform: translateY(-110%);
@@ -192,16 +214,16 @@ html {
 }
 @keyframes slidedown {
   0% {
-    transform: translateY(-110%);    
+    transform: translateY(-110%);
   }
   100% {
     transform: translateY(0%);
   }
 }
 
-.has-animation:hover .slideup-animation{
+.has-animation:hover .slideup-animation {
   animation: slideup 1.5s ease-in-out forwards;
 }
-.slidedown-animation{
+.slidedown-animation {
   animation: slidedown 1.5s ease-in-out forwards;
 }

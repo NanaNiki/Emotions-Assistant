@@ -16,7 +16,7 @@ import YourReport from "./YourReport";
 
 const caveat = Caveat({ subsets: ["latin-ext"], weight: ["400"], preload: false });
 
-export default function Thankyou({ selectedEmotion, thoughts }) {
+export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
   useEffect(() => {
     const animatedItems = document.querySelectorAll(".animated-item");
     observeScroll(animatedItems);
@@ -92,7 +92,7 @@ export default function Thankyou({ selectedEmotion, thoughts }) {
             Start a new process
           </button>
           {selectedEmotion ? ( <PDFDownloadLink
-            document={<YourReport selectedEmotion={selectedEmotion} thoughts={thoughts} />}
+            document={<YourReport selectedEmotion={selectedEmotion} thoughts={thoughts} affirmation={affirmation} />}
            fileName={`${selectedEmotion.name}.pdf`} as="style"
           >
             <button className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
