@@ -56,18 +56,21 @@ export default function Process() {
       <div className="flex flex-row mx-auto md:hidden sm:mt-10 mt-3">
         <button
           onClick={() => handleActiveStep(1)}
+          aria-label="Feel it"
           className="bg-pink-700 p-1.5 px-4 rounded-full focus:text-pink-950"
         >
           Step 1
         </button>
         <button
           onClick={() => handleActiveStep(2)}
+          aria-label="Express it"
           className="bg-pink-700 p-1.5 px-4 mx-4 rounded-full focus:text-pink-950"
         >
           Step 2
         </button>
         <button
           onClick={() => handleActiveStep(3)}
+          aria-label="Integrate it"
           className="bg-pink-700 p-1.5 px-4 rounded-full focus:text-pink-950"
         >
           Step 3

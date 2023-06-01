@@ -79,6 +79,7 @@ export default function Emotions() {
       >
         <GiMeditation
           onClick={() => pauseAnimation()}
+          aria-label="Let's go to the selection step"
           className="mx-auto shadow-white shadow-md hover:shadow-purple-300 hover:shadow-md rounded-full w-[7rem] h-[7rem] p-2"
         />
       </button>

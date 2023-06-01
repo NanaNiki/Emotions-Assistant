@@ -1,5 +1,5 @@
 /**
- * This is a React component that displays a breathing animation and a countdown, and a button 
+ * This is a React component that displays a breathing animation and a countdown, and a button
  * that allows the user to go to next step, rendered accordingly to the state of breathing animation.
  * @returns A React component for a breathing exercise with animations and a button to proceed to the
  * next step. It includes two blob images, a countdown timer, and a circular animation that expands and
@@ -50,6 +50,7 @@ export default function Breathe({ countStart, setCountStart }) {
         className={`animated-item show-up sm:text-5xl  text-3xl font-bold pt-5 ${
           countStart === 0 ? "fade-out" : ""
         }`}
+        aria-live="polite"
       >
         {countStart}
       </h1>
@@ -59,10 +60,12 @@ export default function Breathe({ countStart, setCountStart }) {
           className={` ${
             countStart === 0 ? "breathe-animation" : ""
           } absolute md:w-[700px] md:h-[700px] sm:w-[420px] sm:h-[420px] w-[336px] h-[336px] bg-indigo-400 bg-opacity-30 opacity-[0.4] scale-[0.4] hue-rotate-30 rounded-full`}
+          aria-label="Breathing animation started. Please take 7 slow and deep breaths. Inhaling and exhaling withe ease through your nose."
         ></div>
         <Link
           href="#emotions"
           onClick={handleOkayButton}
+          aria-label="Let's go to the next step"
           className={` ${
             animationActive ? "opacity-0" : "fade-in"
           } z-30 sm:text-3xl text-2xl font-semibold text-center p-2 px-3 hover:shadow-md shadow-none hover:shadow-indigo-900 active:scale-90 rounded-full`}

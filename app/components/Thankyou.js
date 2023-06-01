@@ -7,14 +7,19 @@
 import { Caveat } from "next/font/google";
 import { BsFillTelephoneFill, BsFillChatTextFill } from "react-icons/bs";
 import { GiHeartInside, GiBrain } from "react-icons/gi";
-import { RiMentalHealthFill } from "react-icons/ri";
+import { RiMentalHealthFill, RiCopyrightLine } from "react-icons/ri";
+import { HiHeart } from "react-icons/hi";
 import Link from "next/link";
 import { useEffect } from "react";
 import { observeScroll } from "../page";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import YourReport from "./YourReport";
 
-const caveat = Caveat({ subsets: ["latin-ext"], weight: ["400"], preload: false });
+const caveat = Caveat({
+  subsets: ["latin-ext"],
+  weight: ["400"],
+  preload: false,
+});
 
 export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
   useEffect(() => {
@@ -91,22 +96,47 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
           >
             Start a new process
           </button>
-          {selectedEmotion ? ( <PDFDownloadLink
-            document={<YourReport selectedEmotion={selectedEmotion} thoughts={thoughts} affirmation={affirmation} />}
-           fileName={`${selectedEmotion.name}.pdf`} as="style"
-          >
-            <button className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
-              Get my report
-            </button>
-          </PDFDownloadLink> ) 
-          : <Link
-            href={"#selection"}
-            className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
+          {selectedEmotion ? (
+            <PDFDownloadLink
+              document={
+                <YourReport
+                  selectedEmotion={selectedEmotion}
+                  thoughts={thoughts}
+                  affirmation={affirmation}
+                />
+              }
+              fileName={`${selectedEmotion.name}.pdf`}
+              as="style"
+            >
+              <button className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
+                Get my report
+              </button>
+            </PDFDownloadLink>
+          ) : (
+            <Link
+              href={"#selection"}
+              aria-label="Let's go back to the selection"
+              className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
+            >
               No report
             </Link>
-          }
-          
+          )}
         </div>
+      </div>
+      <div className="flex flex-row w-screen justify-between text-xs text-white">
+      <div className="w-fit flex flex-row mx-1">
+         <span className="text-[10px]">2023</span> <span className="font-bold ms-1"> Emotional Assistant</span> <RiCopyrightLine className="text-[10px] mb-2" />
+          </div>
+          <div className="w-fit flex flex-row mx-1">
+          made with <HiHeart className="text-pink-700 mx-1" /> by
+          <Link
+            href={"https://github.com/NanaNiki"}
+            className="hover:text-pink-600 hover:italic mx-1"
+          >
+            {" "}
+            Nicol
+          </Link>
+          </div>
       </div>
     </div>
   );

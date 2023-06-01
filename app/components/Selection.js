@@ -56,6 +56,7 @@ export default function Selection({ setShowPopUp, setSelectedEmotion }) {
           <button
             type="submit"
             onClick={handleFormSubmit}
+            aria-label="Confirm your choice"
             className="p-1 h-8 text-2xl rounded-full shadow-white shadow-sm hover:shadow-purple-300 hover:text-purple-300"
           >
             <BsCheckLg />

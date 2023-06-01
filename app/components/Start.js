@@ -84,6 +84,7 @@ export default function Start({ countStart, setCountStart }) {
       <Link
       href={"#breathe"}
         onClick={handleStartCountDown}
+        aria-label="Let's go to the breathing excercise"
         className="bg-purple-950 hover:bg-pink-900 text-white rounded-full p-2.5 px-5 text-3xl animated-item show-up sm:delay-[0.5s] delay-[7s]"
       >
         Ready?

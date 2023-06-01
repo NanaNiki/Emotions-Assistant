@@ -5,7 +5,7 @@ const comfortaa = Comfortaa({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Emotions Assistant App",
-  description: "Build with next.js and emotions by NanaNiki",
+  description: "Your personal emotions assistant is here to help you navigate!",
 };
 
 export default function RootLayout({ children }) {

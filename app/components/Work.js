@@ -73,7 +73,7 @@ export default function Work({ selectedEmotion }) {
               </h1>
             </div>
             <div className="flex flex-col md:mx-3 md:mt-0 mx-auto mt-6 justify-center text-5xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
-              <Link href={"#integration"}>
+              <Link href={"#integration"} aria-label="Let's go to the integration step">
                 <GiBrain />
                 <HiOutlineChevronDoubleDown />
               </Link>
