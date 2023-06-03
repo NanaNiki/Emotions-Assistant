@@ -66,7 +66,7 @@ export default function Start({ countStart, setCountStart }) {
             alt="blob of violet and light blue shades"  
           />
         </div>
-      <h1 className="animated-item show-up delay-[1.5s] sm:text-5xl text-3xl">
+      <h1 className="animated-item show-up delay-[1s] sm:text-5xl text-3xl">
         Hello!
       </h1>
       <h1 className="animated-item show-up delay-[2s] sm:text-5xl text-3xl">
@@ -85,7 +85,7 @@ export default function Start({ countStart, setCountStart }) {
       href={"#breathe"}
         onClick={handleStartCountDown}
         aria-label="Let's go to the breathing excercise"
-        className="bg-purple-950 hover:bg-pink-900 text-white rounded-full p-2.5 px-5 text-3xl animated-item show-up sm:delay-[0.5s] delay-[7s]"
+        className="bg-purple-950 hover:bg-pink-900 text-white rounded-full p-2.5 px-5 text-3xl animated-item show-up delay-[7s]"
       >
         Ready?
       </Link>

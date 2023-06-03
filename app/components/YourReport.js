@@ -3,6 +3,7 @@
  * from states being passed as props.
  * @returns The `YourReport` component is being returned, which renders a PDF document with selected
  * emotion, thoughts and affirmation.
+ * and to nest it inside thankyou.js 
  */
 import {
   Page,
@@ -16,10 +17,12 @@ import {
 const styles = StyleSheet.create({
   page: {
     backgroundColor: "#FFFFFF",
+    paddingVertical: 60,
+    paddingHorizontal: 35,
   },
   section: {
-    padding: 20,
     zIndex: 10,
+    paddingBottom: 10,
   },
   title: {
     color: "#5271FF",
@@ -45,6 +48,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "Helvetica",
     lineHeight: 1.25,
+    zIndex: 20,
   },
   imagetop: {
     top: 0,
@@ -60,14 +64,6 @@ const styles = StyleSheet.create({
     height: 150,
     position: "absolute",
   },
-  wrapper: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    top: 0,
-    paddingVertical: 40,
-  },
 });
 
 export default function YourReport({ selectedEmotion, thoughts, affirmation }) {
@@ -78,8 +74,8 @@ export default function YourReport({ selectedEmotion, thoughts, affirmation }) {
           src={"images/pdftop.png"}
           style={styles.imagetop}
           fixed={true}
+          alt="pdfblobtop"
         ></Image>
-        <View style={styles.wrapper}>
           <View style={styles.section}>
             <Text style={styles.title}>
               ~ Today I worked on: {selectedEmotion?.name} ~
@@ -101,8 +97,8 @@ export default function YourReport({ selectedEmotion, thoughts, affirmation }) {
             src={"images/pdfbot.png"}
             style={styles.imagebot}
             fixed={true}
+            alt="pdfblobbottom"
           ></Image>
-        </View>
       </Page>
     </Document>
   );

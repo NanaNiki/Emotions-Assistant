@@ -116,6 +116,7 @@ export default function Integration({setThoughts}) {
             >
               <button
                 onClick={() => handleIncrementDecrement(1)}
+                aria-label="Add one more minute"
                 className="mx-2 text-3xl hover:-hue-rotate-60"
               >
                 <AiOutlinePlus />
@@ -129,20 +130,21 @@ export default function Integration({setThoughts}) {
               </div>
               <button
                 onClick={() => handleIncrementDecrement(-1)}
+                aria-label="Remove one minute"
                 className="ms-5 hover:hue-rotate-60"
               >
                 <AiOutlineMinus />
               </button>
               <button onClick={startTimer} className="hover:hue-rotate-30 mx-2">
-                {timerOn ? <AiOutlinePause /> : <FiPlay />}
+                {timerOn ? <AiOutlinePause aria-label="Pause" /> : <FiPlay aria-label="Play" />}
               </button>
               <audio ref={audioRef} src="/_Alarm04.mp3"></audio>
             </div>
             <button onClick={toogleTimerVisibility} className="mx-4 text-4xl">
               {hideTimer ? (
-                <RiEyeCloseFill className="transition-all duration-500 text-purple-900 hover:text-purple-400" />
+                <RiEyeCloseFill className="transition-all duration-500 text-purple-900 hover:text-purple-400" aria-label="Hide timer"/>
               ) : (
-                <FaEye className="text-indigo-800 transition-all duration-500 hover:text-indigo-400" />
+                <FaEye className="text-indigo-800 transition-all duration-500 hover:text-indigo-400" aria-label="Show itmer"/>
               )}
             </button>
           </div>
@@ -176,7 +178,7 @@ export default function Integration({setThoughts}) {
             setThoughts(e.target.value);
           }}
           className="md:w-[70%] md:h-[300px] w-[95%] h-[400px] p-5 bg-indigo-300 text-indigo-900 rounded-3xl md:ms-16 md:mx-0 mx-auto resize-none"
-        ></textarea>
+        aria-label="field for reflections"></textarea>
         <div className="flex flex-col md:ms-10 md:mx-0 mx-auto md:mt-0 mt-5 justify-end sm:text-5xl text-4xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
           <Link href="#closure" aria-label="Let's go to the breathing excercise">
             <GiHeartInside />

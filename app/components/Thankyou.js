@@ -13,7 +13,13 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { observeScroll } from "../page";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import YourReport from "./YourReport";
+// import dynamic from "next/dynamic.js";
+
+import YourReport from "./YourReport.js";
+
+// const DynamicYourReport = dynamic(() => import("./YourReport.js"), {
+//   ssr: false,
+// });
 
 const caveat = Caveat({
   subsets: ["latin-ext"],
@@ -91,7 +97,11 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
         </div>
         <div className="flex flex-row md:mt-10 mt-5 justify-center sm:text-2xl text-pink-200">
           <button
-            onClick={() => window.location.reload()}
+            onClick={() => {
+              history.replaceState(null, null, window.location.pathname);
+              window.location.reload();
+              window.scrollTo(0, 0);
+            }}
             className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
           >
             Start a new process
@@ -106,7 +116,6 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
                 />
               }
               fileName={`${selectedEmotion.name}.pdf`}
-              as="style"
             >
               <button className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
                 Get my report
@@ -124,10 +133,12 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
         </div>
       </div>
       <div className="flex flex-row w-screen justify-between text-xs text-white">
-      <div className="w-fit flex flex-row mx-1">
-         <span className="text-[10px]">2023</span> <span className="font-bold ms-1"> Emotional Assistant</span> <RiCopyrightLine className="text-[10px] mb-2" />
-          </div>
-          <div className="w-fit flex flex-row mx-1">
+        <div className="w-fit flex flex-row mx-1">
+          <span className="text-[10px]">2023</span>{" "}
+          <span className="font-bold ms-1"> Emotional Assistant</span>{" "}
+          <RiCopyrightLine className="text-[10px] mb-2" />
+        </div>
+        <div className="w-fit flex flex-row mx-1">
           made with <HiHeart className="text-pink-700 mx-1" /> by
           <Link
             href={"https://github.com/NanaNiki"}
@@ -136,7 +147,7 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
             {" "}
             Nicol
           </Link>
-          </div>
+        </div>
       </div>
     </div>
   );

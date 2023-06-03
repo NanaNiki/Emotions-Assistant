@@ -60,7 +60,7 @@ export default function Breathe({ countStart, setCountStart }) {
           className={` ${
             countStart === 0 ? "breathe-animation" : ""
           } absolute md:w-[700px] md:h-[700px] sm:w-[420px] sm:h-[420px] w-[336px] h-[336px] bg-indigo-400 bg-opacity-30 opacity-[0.4] scale-[0.4] hue-rotate-30 rounded-full`}
-          aria-label="Breathing animation started. Please take 7 slow and deep breaths. Inhaling and exhaling withe ease through your nose."
+          aria-roledescription="Breathing animation started. Please take 7 slow and deep breaths. Inhaling and exhaling withe ease through your nose."
         ></div>
         <Link
           href="#emotions"
