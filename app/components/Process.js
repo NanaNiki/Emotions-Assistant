@@ -100,11 +100,11 @@ export default function Process() {
           })}
         </div>
       </div>
-      <Link href="#work">
+      <a href="#work">
         <h1 className="relative md:absolute md:top-12 md:right-8 md:rotate-12 md:mt-5 mt-4 w-fit mx-auto bg-pink-700 hover:bg-indigo-800 hover:delay-0 text-white rounded-full p-2 sm:px-5 px-3 sm:text-2xl text-xl animated-item slide-in-left md:delay-[10s] active:animate-bounce">
           Let's do the work!
         </h1>
-      </Link>
+      </a>
     </div>
   );
 }

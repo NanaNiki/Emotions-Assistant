@@ -149,7 +149,7 @@ export default function Closure({
           } absolute md:w-[560px] md:h-[560px] sm:w-[420px] sm:h-[420px] w-[336px] h-[336px] bg-indigo-400 bg-opacity-30 opacity-[0.4] scale-[0.4] hue-rotate-30 rounded-full`}
           aria-roledescription="Breathing animation started. Please take 7 slow and deep breaths. Inhaling and exhaling withe ease through your nose."
         ></div>
-        <Link
+        <a
           href="#thankyou"
           onClick={handleOkayButton}
           aria-label="Let's go to the final step"
@@ -158,7 +158,7 @@ export default function Closure({
           } z-30 sm:text-5xl text-4xl font-semibold text-center p-2 px-3 hover:scale-105 hover:shadow-md shadow-none hover:shadow-indigo-900 active:scale-90 rounded-full`}
         >
           <FaHandSparkles />
-        </Link>
+        </a>
       </div>
     </div>
   );

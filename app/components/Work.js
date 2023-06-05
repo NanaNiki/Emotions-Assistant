@@ -19,12 +19,12 @@ export default function Work({ selectedEmotion }) {
     <div className="lg:h-screen h-fit w-screen" id="work">
       {selectedEmotion === null ? (
         <div className="animated-item show-up md:w-fit h-fit w-10/12 mt-32 mx-auto items-center flex">
-          <Link
+          <a
             href={"#selection"}
             className="text-center sm:text-3xl text-xl p-2 text-pink-200 shadow-md rounded-full shadow-pink-600 transition-all duration-700 hover:bg-pink-700 hover:shadow-purple-900"
           >
             Emotion not selcted. Please go back to Selection.
-          </Link>
+          </a>
         </div>
       ) : (
         <>
@@ -73,10 +73,10 @@ export default function Work({ selectedEmotion }) {
               </h1>
             </div>
             <div className="flex flex-col md:mx-3 md:mt-0 mx-auto mt-6 justify-center text-5xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
-              <Link href={"#integration"} aria-label="Let's go to the integration step">
+              <a href={"#integration"} aria-label="Let's go to the integration step">
                 <GiBrain />
                 <HiOutlineChevronDoubleDown />
-              </Link>
+              </a>
             </div>
           </div>
         </>

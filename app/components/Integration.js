@@ -180,10 +180,10 @@ export default function Integration({setThoughts}) {
           className="md:w-[70%] md:h-[300px] w-[95%] h-[400px] p-5 bg-indigo-300 text-indigo-900 rounded-3xl md:ms-16 md:mx-0 mx-auto resize-none"
         aria-label="field for reflections"></textarea>
         <div className="flex flex-col md:ms-10 md:mx-0 mx-auto md:mt-0 mt-5 justify-end sm:text-5xl text-4xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
-          <Link href="#closure" aria-label="Let's go to the breathing excercise">
+          <a href="#closure" aria-label="Let's go to the breathing excercise">
             <GiHeartInside />
             <HiOutlineChevronDoubleDown />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

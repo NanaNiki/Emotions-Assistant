@@ -122,13 +122,13 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
               </button>
             </PDFDownloadLink>
           ) : (
-            <Link
+            <a
               href={"#selection"}
               aria-label="Let's go back to the selection"
               className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
             >
               No report
-            </Link>
+            </a>
           )}
         </div>
       </div>

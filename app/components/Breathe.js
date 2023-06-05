@@ -62,7 +62,7 @@ export default function Breathe({ countStart, setCountStart }) {
           } absolute md:w-[700px] md:h-[700px] sm:w-[420px] sm:h-[420px] w-[336px] h-[336px] bg-indigo-400 bg-opacity-30 opacity-[0.4] scale-[0.4] hue-rotate-30 rounded-full`}
           aria-roledescription="Breathing animation started. Please take 7 slow and deep breaths. Inhaling and exhaling withe ease through your nose."
         ></div>
-        <Link
+        <a
           href="#emotions"
           onClick={handleOkayButton}
           aria-label="Let's go to the next step"
@@ -71,7 +71,7 @@ export default function Breathe({ countStart, setCountStart }) {
           } z-30 sm:text-3xl text-2xl font-semibold text-center p-2 px-3 hover:shadow-md shadow-none hover:shadow-indigo-900 active:scale-90 rounded-full`}
         >
           Okay!
-        </Link>
+        </a>
       </div>
     </div>
   );
