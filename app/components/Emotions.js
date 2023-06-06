@@ -42,7 +42,7 @@ export default function Emotions() {
     });
 
     setTimeout(() => {
-      router.push("#selection");
+      router.push("/#selection");
     }, 1500);
   };
 

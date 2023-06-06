@@ -24,7 +24,7 @@ export default function Selection({ setShowPopUp, setSelectedEmotion }) {
       setSelectedEmotion(matchingEmotion);
       setSearchEmotion(matchingEmotion.name.toLowerCase());
       console.log(matchingEmotion.name);
-      router.push("#process");
+      router.push("/#process");
     } else if (!matchingEmotion) {
       setShowPopUp(true);
     }
