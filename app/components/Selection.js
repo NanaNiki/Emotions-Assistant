@@ -7,12 +7,10 @@
  * emotionsData array, it shows a pop-up.
  */
 import emotionsData from "../emotions.json";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BsCheckLg } from "react-icons/bs";
 
 export default function Selection({ setShowPopUp, setSelectedEmotion }) {
-  const router = useRouter();
   const [searchEmotion, setSearchEmotion] = useState("");
 
   const handleFormSubmit = (event) => {
@@ -24,7 +22,7 @@ export default function Selection({ setShowPopUp, setSelectedEmotion }) {
       setSelectedEmotion(matchingEmotion);
       setSearchEmotion(matchingEmotion.name.toLowerCase());
       console.log(matchingEmotion.name);
-      router.push("/#process");
+      window.location.hash = 'process';
     } else if (!matchingEmotion) {
       setShowPopUp(true);
     }

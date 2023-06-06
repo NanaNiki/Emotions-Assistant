@@ -6,7 +6,6 @@
  * to pause the animation, and take the user to the next step.
  */
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { observeScroll } from "../page";
 import {
   BsFillEmojiAngryFill,
@@ -26,8 +25,6 @@ import {
 import { GiMeditation } from "react-icons/gi";
 
 export default function Emotions() {
-  const router = useRouter();
-
   useEffect(() => {
     const animatedItems = document.querySelectorAll(".animated-item");
     observeScroll(animatedItems);
@@ -42,7 +39,7 @@ export default function Emotions() {
     });
 
     setTimeout(() => {
-      router.push("/#selection");
+      window.location.hash = 'selection';
     }, 1500);
   };
 

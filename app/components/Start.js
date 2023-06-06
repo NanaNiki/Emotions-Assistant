@@ -81,14 +81,14 @@ export default function Start({ countStart, setCountStart }) {
       <h1 className="animated-item show-up delay-[6s] sm:hidden text-xl">
         First,<br></br> let's breathe a little
       </h1>
-      <Link
-      href={"/#breathe"}
+      <a
+      href={"#breathe"}
         onClick={handleStartCountDown}
         aria-label="Let's go to the breathing excercise"
         className="bg-purple-950 hover:bg-pink-900 text-white rounded-full p-2.5 px-5 text-3xl animated-item show-up delay-[7s]"
       >
         Ready?
-      </Link>
+      </a>
     </div>
     </>
   );
