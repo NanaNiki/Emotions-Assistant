@@ -92,17 +92,17 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
           <h1>Keep livin'!</h1>
         </div>
         <div className="flex flex-row md:mt-10 mt-5 justify-center sm:text-2xl text-pink-200">
-          <button
+          {/* <button
             onClick={() => {
-              // history.replaceState(null, null, window.location.pathname);
+              history.replaceState(null, null, window.location.pathname);
               window.location.reload();
-              // window.router.push("/");
-              // window.scrollTo(0, 0);
-            }}
-            className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
+              window.router.push("/");
+              window.scrollTo(0, 0);
+            }} */}
+           <Link href={"/"} className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
           >
             Start a new process
-          </button>
+          </Link>
           {selectedEmotion ? (
             <PDFDownloadLink
               document={
