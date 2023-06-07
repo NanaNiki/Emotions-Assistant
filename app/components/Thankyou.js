@@ -13,13 +13,8 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { observeScroll } from "../page";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-// import dynamic from "next/dynamic.js";
-
+import { useRouter } from "next/navigation";
 import YourReport from "./YourReport.js";
-
-// const DynamicYourReport = dynamic(() => import("./YourReport.js"), {
-//   ssr: false,
-// });
 
 const caveat = Caveat({
   subsets: ["latin-ext"],
@@ -28,6 +23,7 @@ const caveat = Caveat({
 });
 
 export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
+  const router = useRouter();
   useEffect(() => {
     const animatedItems = document.querySelectorAll(".animated-item");
     observeScroll(animatedItems);
@@ -98,9 +94,10 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
         <div className="flex flex-row md:mt-10 mt-5 justify-center sm:text-2xl text-pink-200">
           <button
             onClick={() => {
-              history.replaceState(null, null, window.location.pathname);
+              // history.replaceState(null, null, window.location.pathname);
               window.location.reload();
-              window.scrollTo(0, 0);
+              // window.router.push("/");
+              // window.scrollTo(0, 0);
             }}
             className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
           >
