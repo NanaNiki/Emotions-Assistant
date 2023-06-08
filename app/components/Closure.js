@@ -6,7 +6,7 @@
  */
 import { useState, useEffect } from "react";
 import { FaHandSparkles } from "react-icons/fa";
-import emotionsData from "../emotions.json";
+import emotionsData from "../data/emotions.json";
 
 export default function Closure({
   selectedEmotion,

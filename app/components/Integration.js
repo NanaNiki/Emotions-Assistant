@@ -6,7 +6,7 @@
  * includes functions to handle the timer, generate a new question, and format the time. The component
  * receives a prop named "setThoughts" that is used to update the state of the user's thoughts.
  */
-import data from "../questions.json";
+import data from "../data/questions.json";
 import { observeScroll } from "../page";
 import { useState, useRef, useEffect } from "react";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlinePause } from "react-icons/ai";

@@ -6,7 +6,7 @@
  * state and navigates to a section with the id "process". If the entered emotion is not found in the
  * emotionsData array, it shows a pop-up.
  */
-import emotionsData from "../emotions.json";
+import emotionsData from "../data/emotions.json";
 import { useState } from "react";
 import { BsCheckLg } from "react-icons/bs";
 
