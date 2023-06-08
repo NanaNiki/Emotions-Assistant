@@ -6,7 +6,6 @@
  * contracts.
  */
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Breathe({ countStart, setCountStart }) {
@@ -54,7 +53,7 @@ export default function Breathe({ countStart, setCountStart }) {
       >
         {countStart}
       </h1>
-      <div className="flex justify-center items-center w-full h-full my-auto">
+      <div className="flex justify-center items-center w-full h-full my-auto sm:mb-0 mb-14">
         <div className="absolute md:w-[250px] md:h-[250px] sm:w-[150px] sm:h-[150px] w-[120px] h-[120px] bg-indigo-500 rounded-full"></div>
         <div
           className={` ${

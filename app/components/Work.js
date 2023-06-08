@@ -7,7 +7,6 @@
  * to the selection page. If selectedEmotion is not null, information about the selected emotion is
  * displayed, including its name, description, how to feel and express the emoiton, as well as end note.
  */
-import Link from "next/link";
 import { useState } from "react";
 import { GiBrain } from "react-icons/gi";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";

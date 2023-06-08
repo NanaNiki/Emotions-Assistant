@@ -30,7 +30,7 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex flex-col" id="thankyou">
+    <div className="relative sm:h-screen h-fit w-screen flex flex-col justify-evenly" id="thankyou">
       <h1 className="animated-item show-up text-4xl text-center md:mt-10 mt-5 shadow-text">
         Ok!
       </h1>
@@ -91,15 +91,9 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
           <h1 className="md:me-0 me-5">Keep feelin'!</h1>
           <h1>Keep livin'!</h1>
         </div>
-        <div className="flex flex-row md:mt-10 mt-5 justify-center sm:text-2xl text-pink-200">
-          {/* <button
-            onClick={() => {
-              history.replaceState(null, null, window.location.pathname);
-              window.location.reload();
-              window.router.push("/");
-              window.scrollTo(0, 0);
-            }} */}
-           <Link href={"/"} className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
+        </div>
+        <div className="flex flex-row md:mt-10 mt-5 sm:mb-0 mb-5 justify-center sm:text-2xl text-base text-pink-200">
+          <Link href={"/"} className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1.5 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
           >
             Start a new process
           </Link>
@@ -114,7 +108,7 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
               }
               fileName={`${selectedEmotion.name}.pdf`}
             >
-              <button className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
+              <button className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1.5 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
                 Get my report
               </button>
             </PDFDownloadLink>
@@ -128,8 +122,8 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
             </a>
           )}
         </div>
-      </div>
-      <div className="flex flex-row w-screen justify-between text-xs text-white">
+      
+      <div className="flex flex-row w-screen h-fit justify-between text-xs text-indigo-400 text-opacity-40">
         <div className="w-fit flex flex-row mx-1">
           <span className="text-[10px]">2023</span>{" "}
           <span className="font-bold ms-1"> Emotional Assistant</span>{" "}

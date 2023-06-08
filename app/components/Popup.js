@@ -9,7 +9,7 @@ import { RxCross1 } from "react-icons/rx";
 
 export default function Popup({ onHandleClose }) {
   return (
-    <div className="z-30 fixed sm:top-1/3 sm:right-1/4 top-1/4 md:w-6/12 w-[24rem] rounded-3xl bg-indigo-200 font-bold text-pink-900 shadow-lg shadow-pink-600">
+    <div className="z-30 fixed sm:top-1/3 sm:right-1/4 top-1/4 md:w-6/12 w-full rounded-3xl bg-indigo-200 font-bold text-pink-900 shadow-lg shadow-pink-600">
       <button
         onClick={onHandleClose}
         aria-label="Close the popup message"

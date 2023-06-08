@@ -44,8 +44,8 @@ export default function Emotions() {
   };
 
   return (
-    <div className="h-screen w-screen overflow-x-hidden" id="emotions">
-      <h1 className="animated-item show-up delay-[0.5s] md:text-3xl text-2xl text-center sm:pt-20 pt-28 sm:px-0 px-8">
+    <div className="h-screen w-screen sm:overflow-y-visible overflow-y-hidden overflow-x-hidden" id="emotions">
+      <h1 className="animated-item show-up delay-[0.5s] md:text-3xl text-2xl text-center sm:pt-20 pt-10 sm:px-0 px-8">
         Sometimes, emotions can be overwhelming...
       </h1>
       <div className="animated-item show-up delay-[1s] relative md:mt-0 mt-36">
@@ -72,7 +72,7 @@ export default function Emotions() {
         No worries, I'm here to break it down for You!
       </h1>
       <button
-        className="animated-item show-up delay-[5s] flex w-screen md:mt-20 mt-40 z-10"
+        className="animated-item show-up delay-[5s] flex w-screen md:mt-20 mt-36 z-10"
       >
         <GiMeditation
           onClick={() => pauseAnimation()}

@@ -4,7 +4,6 @@
  * @returns The component `Process` is being returned, which contains JSX elements and logic to display
  * and handle the steps of emotional integration.
  */
-import Link from "next/link";
 import { useState } from "react";
 
 const processData = [
@@ -34,7 +33,7 @@ export default function Process() {
 
   return (
     <div
-      className="relative h-screen w-screen flex flex-col justify-center"
+      className="relative sm:h-screen h-fit w-screen flex flex-col justify-center"
       id="process"
     >
       <h1 className="md:mt-10 mt-3 animated-item show-up delay-[0.25s] sm:text-3xl text-2xl text-center font-bold">

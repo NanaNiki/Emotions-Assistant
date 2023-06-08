@@ -5,7 +5,6 @@
  * @returns A React component is being returned.
  */
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { FaHandSparkles } from "react-icons/fa";
 import emotionsData from "../emotions.json";
 
@@ -17,7 +16,7 @@ export default function Closure({
   const [countStart, setCountStart] = useState(3);
   const [animationActive, setAnimationActive] = useState(true);
   const [showAffirmation, setShowAffirmation] = useState(false);
-  const [hideTimer, setHideTimer] = useState(false);
+  const [hideTimer, setHideTimer] = useState(true);
 
   const getAffirmation = () => {
     if (selectedEmotion) {
@@ -57,7 +56,7 @@ export default function Closure({
 
   const handleStartCountDown = () => {
     startCountDown();
-    setHideTimer(true);
+    setHideTimer(false);
   };
 
   useEffect(() => {
@@ -122,24 +121,21 @@ export default function Closure({
             </button>
           </>
         )}
-        {hideTimer ? (
-          <h1
-            className={`absolute right-[48%] text-center sm:text-5xl text-3xl font-bold ${
-              countStart === 0 ? "fade-out" : ""
-            }`}
-            aria-live="polite"
-          >
-            {countStart}
-          </h1>
-        ) : (
-          <button
-            onClick={handleStartCountDown}
-            className={`${countStart < 3 ? "fade-out" : ""} 
+        <h1
+          className={`absolute right-[48%] text-center sm:text-5xl text-3xl font-bold ${
+            countStart === 0 ? "fade-out" : ""
+          } ${hideTimer ? "hidden" : "fade-in"}`}
+          aria-live="polite"
+        >
+          {countStart}
+        </h1>
+        <button
+          onClick={handleStartCountDown}
+          className={`${hideTimer ? "" : "fade-out"} 
              outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 lg:mx-auto sm:mx-2 mx-4 mt-5 sm:text-xl shadow-md shadow-pink-600 hover:duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900`}
-          >
-            I am ready to breathe
-          </button>
-        )}
+        >
+          I am ready to breathe
+        </button>
       </div>
       <div className="flex justify-center items-center my-auto pb-32 sm:pb-10">
         <div className="absolute md:w-[200px] md:h-[200px] sm:w-[150px] sm:h-[150px] w-[120px] h-[120px] bg-indigo-500 rounded-full"></div>
