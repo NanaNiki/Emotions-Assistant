@@ -26,14 +26,14 @@ export default function Breathe({ countStart, setCountStart }) {
 
   return (
     <div
-      className="relative h-screen w-screen flex flex-col items-center overflow-x-hidden"
+      className="relative flex h-screen w-screen flex-col items-center overflow-x-hidden"
       id="breathe"
     >
       <Image
         src={"images/blobr.svg"}
         width={330}
         height={400}
-        className="z-0 absolute top-0 sm:right-0 -right-10"
+        className="absolute -right-10 top-0 z-0 sm:right-0"
         priority={true}
         alt="blob of light blue shades"
       />
@@ -41,24 +41,24 @@ export default function Breathe({ countStart, setCountStart }) {
         src={"images/blobl.svg"}
         width={330}
         height={400}
-        className="z-0 absolute bottom-0 sm:left-0 -left-10"
+        className="absolute -left-10 bottom-0 z-0 sm:left-0"
         priority={true}
         alt="blob of light blue shades"
       />
       <h1
-        className={`animated-item show-up sm:text-5xl  text-3xl font-bold pt-5 ${
+        className={`animated-item show-up pt-5  text-3xl font-bold sm:text-5xl ${
           countStart === 0 ? "fade-out" : ""
         }`}
         aria-live="polite"
       >
         {countStart}
       </h1>
-      <div className="flex justify-center items-center w-full h-full my-auto sm:mb-0 mb-14">
-        <div className="absolute md:w-[250px] md:h-[250px] sm:w-[150px] sm:h-[150px] w-[120px] h-[120px] bg-indigo-500 rounded-full"></div>
+      <div className="my-auto mb-14 flex h-full w-full items-center justify-center sm:mb-0">
+        <div className="absolute h-[120px] w-[120px] rounded-full bg-indigo-500 sm:h-[150px] sm:w-[150px] md:h-[250px] md:w-[250px]"></div>
         <div
           className={` ${
             countStart === 0 ? "breathe-animation" : ""
-          } absolute md:w-[700px] md:h-[700px] sm:w-[420px] sm:h-[420px] w-[336px] h-[336px] bg-indigo-400 bg-opacity-30 opacity-[0.4] scale-[0.4] hue-rotate-30 rounded-full`}
+          } absolute h-[336px] w-[336px] scale-[0.4] rounded-full bg-indigo-400 bg-opacity-30 opacity-[0.4] hue-rotate-30 sm:h-[420px] sm:w-[420px] md:h-[700px] md:w-[700px]`}
           aria-roledescription="Breathing animation started. Please take 7 slow and deep breaths. Inhaling and exhaling withe ease through your nose."
         ></div>
         <a
@@ -67,7 +67,7 @@ export default function Breathe({ countStart, setCountStart }) {
           aria-label="Let's go to the next step"
           className={` ${
             animationActive ? "opacity-0" : "fade-in"
-          } z-30 sm:text-3xl text-2xl font-semibold text-center p-2 px-3 hover:shadow-md shadow-none hover:shadow-indigo-900 active:scale-90 rounded-full`}
+          } z-30 rounded-full p-2 px-3 text-center text-2xl font-semibold shadow-none hover:shadow-md hover:shadow-indigo-900 active:scale-90 sm:text-3xl`}
         >
           Okay!
         </a>

@@ -75,31 +75,31 @@ export default function Closure({
 
   return (
     <div
-      className="relative h-screen w-screen flex flex-col items-center overflow-x-hidden"
+      className="relative flex h-screen w-screen flex-col items-center overflow-x-hidden"
       id="closure"
     >
       <h1
         className={`${
           affirmation ? "fade-out p-0" : ""
-        } animated-item show-up delay-[0.5s] sm:w-8/12 w-11/12 mx-auto sm:text-2xl text-lg p-5 text-center text-pink-300`}
+        } animated-item show-up mx-auto w-11/12 p-5 text-center text-lg text-pink-300 delay-[0.5s] sm:w-8/12 sm:text-2xl`}
       >
         As we come full circle in this emotional journey, let's take a moment to
         breathe deeply, find solace and renewed energy to continue our emotional
         growth.
       </h1>
-      <div className="sm:w-8/12 w-11/12 mx-auto sm:mb-0 mb-10 items-center justify-center flex flex-row">
+      <div className="mx-auto mb-10 flex w-11/12 flex-row items-center justify-center sm:mb-0 sm:w-8/12">
         {selectedEmotion ? (
           <>
             <span
               className={`${showAffirmation ? "fade-in" : "hidden"}
-              delay-500 absolute top-5 sm:w-6/12 outline outline-2 outline-indigo-600 shadow-md shadow-indigo-600 rounded-3xl text-center mt-5 p-2 px-4 mx-4 sm:text-xl text-base`}
+              absolute top-5 mx-4 mt-5 rounded-3xl p-2 px-4 text-center text-base shadow-md shadow-indigo-600 outline outline-2 outline-indigo-600 delay-500 sm:w-6/12 sm:text-xl`}
             >
               {affirmation}
             </span>
             <button
               onClick={getAffirmation}
               className={`${showAffirmation ? "fade-out" : ""}
-            outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 mt-5 lg:mx-auto sm:mx-2 mx-4 sm:text-xl shadow-md shadow-pink-600 hover:duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900`}
+            mx-4 mt-5 h-fit w-fit rounded-full px-3 py-2 shadow-md shadow-pink-600 outline outline-2 outline-pink-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900 hover:duration-700 sm:mx-2 sm:text-xl lg:mx-auto`}
             >
               Reveal my affirmation
             </button>
@@ -108,21 +108,21 @@ export default function Closure({
           <>
             <span
               className={`${showAffirmation ? "fade-in" : "hidden"}
-              delay-500 absolute top-5 sm:w-6/12 outline outline-2 outline-indigo-600 shadow-md shadow-indigo-600 rounded-3xl text-center mt-5 p-2 px-4 mx-4 sm:text-xl text-base`}
+              absolute top-5 mx-4 mt-5 rounded-3xl p-2 px-4 text-center text-base shadow-md shadow-indigo-600 outline outline-2 outline-indigo-600 delay-500 sm:w-6/12 sm:text-xl`}
             >
               {affirmation}
             </span>
             <button
               onClick={getAffirmation}
               className={`${showAffirmation ? "fade-out" : ""} 
-              outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 mt-5 lg:mx-auto sm:mx-2 mx-4 sm:text-xl shadow-md shadow-pink-600 hover:duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900`}
+              mx-4 mt-5 h-fit w-fit rounded-full px-3 py-2 shadow-md shadow-pink-600 outline outline-2 outline-pink-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900 hover:duration-700 sm:mx-2 sm:text-xl lg:mx-auto`}
             >
               Reveal random affirmation
             </button>
           </>
         )}
         <h1
-          className={`absolute right-[48%] text-center sm:text-5xl text-3xl font-bold ${
+          className={`absolute right-[48%] text-center text-3xl font-bold sm:text-5xl ${
             countStart === 0 ? "fade-out" : ""
           } ${hideTimer ? "hidden" : "fade-in"}`}
           aria-live="polite"
@@ -132,17 +132,17 @@ export default function Closure({
         <button
           onClick={handleStartCountDown}
           className={`${hideTimer ? "" : "fade-out"} 
-             outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 lg:mx-auto sm:mx-2 mx-4 mt-5 sm:text-xl shadow-md shadow-pink-600 hover:duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900`}
+             mx-4 mt-5 h-fit w-fit rounded-full px-3 py-2 shadow-md shadow-pink-600 outline outline-2 outline-pink-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900 hover:duration-700 sm:mx-2 sm:text-xl lg:mx-auto`}
         >
           I am ready to breathe
         </button>
       </div>
-      <div className="flex justify-center items-center my-auto pb-32 sm:pb-10">
-        <div className="absolute md:w-[200px] md:h-[200px] sm:w-[150px] sm:h-[150px] w-[120px] h-[120px] bg-indigo-500 rounded-full"></div>
+      <div className="my-auto flex items-center justify-center pb-32 sm:pb-10">
+        <div className="absolute h-[120px] w-[120px] rounded-full bg-indigo-500 sm:h-[150px] sm:w-[150px] md:h-[200px] md:w-[200px]"></div>
         <div
           className={` ${
             countStart === 0 ? "breathe-animation" : ""
-          } absolute md:w-[560px] md:h-[560px] sm:w-[420px] sm:h-[420px] w-[336px] h-[336px] bg-indigo-400 bg-opacity-30 opacity-[0.4] scale-[0.4] hue-rotate-30 rounded-full`}
+          } absolute h-[336px] w-[336px] scale-[0.4] rounded-full bg-indigo-400 bg-opacity-30 opacity-[0.4] hue-rotate-30 sm:h-[420px] sm:w-[420px] md:h-[560px] md:w-[560px]`}
           aria-roledescription="Breathing animation started. Please take 7 slow and deep breaths. Inhaling and exhaling withe ease through your nose."
         ></div>
         <a
@@ -151,7 +151,7 @@ export default function Closure({
           aria-label="Let's go to the final step"
           className={` ${
             animationActive ? "opacity-0" : "fade-in"
-          } z-30 sm:text-5xl text-4xl font-semibold text-center p-2 px-3 hover:scale-105 hover:shadow-md shadow-none hover:shadow-indigo-900 active:scale-90 rounded-full`}
+          } z-30 rounded-full p-2 px-3 text-center text-4xl font-semibold shadow-none hover:scale-105 hover:shadow-md hover:shadow-indigo-900 active:scale-90 sm:text-5xl`}
         >
           <FaHandSparkles />
         </a>

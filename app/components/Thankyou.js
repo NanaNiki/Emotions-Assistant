@@ -30,110 +30,115 @@ export default function Thankyou({ selectedEmotion, thoughts, affirmation }) {
   }, []);
 
   return (
-    <div className="relative sm:h-screen h-fit w-screen flex flex-col justify-evenly" id="thankyou">
-      <h1 className="animated-item show-up text-4xl text-center md:mt-10 mt-5 shadow-text">
+    <div
+      className="relative flex h-fit w-screen flex-col justify-evenly sm:h-screen"
+      id="thankyou"
+    >
+      <h1 className="animated-item show-up shadow-text mt-5 text-center text-4xl md:mt-10">
         Ok!
       </h1>
-      <div className="flex flex-col md:w-8/12 w-10/12 mx-auto md:mt-5 mt-3">
-        <h1 className="sm:w-9/12 animated-item show-up sm:text-xl py-5 text-justify mx-auto text-pink-200">
+      <div className="mx-auto mt-3 flex w-10/12 flex-col md:mt-5 md:w-8/12">
+        <h1 className="animated-item show-up mx-auto py-5 text-justify text-pink-200 sm:w-9/12 sm:text-xl">
           I hope today's process helped you navigate your emotional experience!
           As your Emotional Assistant, my role concludes here. Take a moment to
           acknowledge the work you've done today.
         </h1>
-        <div className="flex flex-row md:mt-3 mt-0">
-          <GiBrain className="flex flex-col ms-10 justify-end text-5xl text-pink-700" />
-          <div className="animated-item slide-in-left delay-[3s] w-9/12 h-[1px] bg-pink-700 shadow-md shadow-pink-400 m-auto"></div>
-          <GiHeartInside className="flex flex-col me-10 justify-end text-5xl text-pink-700" />
+        <div className="mt-0 flex flex-row md:mt-3">
+          <GiBrain className="ms-10 flex flex-col justify-end text-5xl text-pink-700" />
+          <div className="animated-item slide-in-left m-auto h-[1px] w-9/12 bg-pink-700 shadow-md shadow-pink-400 delay-[3s]"></div>
+          <GiHeartInside className="me-10 flex flex-col justify-end text-5xl text-pink-700" />
         </div>
 
-        <div className="flex md:flex-row flex-col md:mt-10 mt-3">
-          <h1 className="md:w-8/12 sm:px-5 py-3 animated-item show-up delay-[5s] sm:text-xl text-justify font-bold mx-auto">
+        <div className="mt-3 flex flex-col md:mt-10 md:flex-row">
+          <h1 className="animated-item show-up mx-auto py-3 text-justify font-bold delay-[5s] sm:px-5 sm:text-xl md:w-8/12">
             Remember, this app is not a substitute for professional help. It's
             important to seek the guidance of qualified professionals who can
             provide personalized support for your well-being. You're not alone
             in this journey, and there are resources available to provide the
             support and care you deserve.
           </h1>
-          <div className="flex flex-col md:mx-0 sm:my-3 md:my-0 mx-auto sm:text-xl text-base font-bold text-indigo-400 animated-item show-up sm:delay-[8s] delay-[7s]">
+          <div className="animated-item show-up mx-auto flex flex-col text-base font-bold text-indigo-400 delay-[7s] sm:my-3 sm:text-xl sm:delay-[8s] md:mx-0 md:my-0">
             <Link
               href={"https://buddyhelp.org/chat/"}
               passHref={true}
               target="_blank"
-              className="flex flex-row hover:text-pink-400 hover:scale-105 p-3"
+              className="flex flex-row p-3 hover:scale-105 hover:text-pink-400"
             >
-              <BsFillChatTextFill className="me-3 sm:text-3xl text-2xl" />{" "}
+              <BsFillChatTextFill className="me-3 text-2xl sm:text-3xl" />{" "}
               <h1>Chat with a Volunteer Listener</h1>
             </Link>
             <Link
               href={"https://befrienders.org/find-support-now/"}
               passHref={true}
               target="_blank"
-              className="flex flex-row hover:text-pink-400 hover:scale-105 p-3"
+              className="flex flex-row p-3 hover:scale-105 hover:text-pink-400"
             >
-              <RiMentalHealthFill className="me-3 sm:text-3xl text-2xl" />{" "}
+              <RiMentalHealthFill className="me-3 text-2xl sm:text-3xl" />{" "}
               <h1>Find support now</h1>
             </Link>
             <Link
               href={"https://blog.opencounseling.com/suicide-hotlines/"}
               passHref={true}
               target="_blank"
-              className="flex flex-row hover:text-pink-400 hover:scale-105 p-3"
+              className="flex flex-row p-3 hover:scale-105 hover:text-pink-400"
             >
-              <BsFillTelephoneFill className="me-3 sm:text-3xl text-2xl" />{" "}
+              <BsFillTelephoneFill className="me-3 text-2xl sm:text-3xl" />{" "}
               <h1>International Suicide Hotlines</h1>
             </Link>
           </div>
         </div>
 
         <div
-          className={`${caveat.className} flex md:flex-col flex-row animated-item show-up delay-[11s] sm:text-5xl text-4xl text-center mt-3 md:mx-0 mx-auto`}
+          className={`${caveat.className} animated-item show-up mx-auto mt-3 flex flex-row text-center text-4xl delay-[11s] sm:text-5xl md:mx-0 md:flex-col`}
         >
-          <h1 className="md:me-0 me-5">Keep feelin'!</h1>
+          <h1 className="me-5 md:me-0">Keep feelin'!</h1>
           <h1>Keep livin'!</h1>
         </div>
-        </div>
-        <div className="flex flex-row md:mt-10 mt-5 sm:mb-0 mb-5 justify-center sm:text-2xl text-base text-pink-200">
-          <Link href={"/"} className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1.5 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
+      </div>
+      <div className="mb-5 mt-5 flex flex-row justify-center text-base text-pink-200 sm:mb-0 sm:text-2xl md:mt-10">
+        <Link
+          href={"/"}
+          className="mx-2 h-fit w-fit rounded-full p-1.5 shadow-md shadow-pink-600 outline outline-2 outline-pink-600 transition-all duration-500 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950 active:-hue-rotate-30 sm:px-3 sm:py-2"
+        >
+          Start a new process
+        </Link>
+        {selectedEmotion ? (
+          <PDFDownloadLink
+            document={
+              <YourReport
+                selectedEmotion={selectedEmotion}
+                thoughts={thoughts}
+                affirmation={affirmation}
+              />
+            }
+            fileName={`${selectedEmotion.name}.pdf`}
           >
-            Start a new process
-          </Link>
-          {selectedEmotion ? (
-            <PDFDownloadLink
-              document={
-                <YourReport
-                  selectedEmotion={selectedEmotion}
-                  thoughts={thoughts}
-                  affirmation={affirmation}
-                />
-              }
-              fileName={`${selectedEmotion.name}.pdf`}
-            >
-              <button className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1.5 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950">
-                Get my report
-              </button>
-            </PDFDownloadLink>
-          ) : (
-            <a
-              href={"#selection"}
-              aria-label="Let's go back to the selection"
-              className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit sm:px-3 sm:py-2 p-1 mx-2 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
-            >
-              No report
-            </a>
-          )}
-        </div>
-      
-      <div className="flex flex-row w-screen h-fit justify-between text-xs text-indigo-400 text-opacity-40">
-        <div className="w-fit flex flex-row mx-1">
+            <button className="mx-2 h-fit w-fit rounded-full p-1.5 shadow-md shadow-pink-600 outline outline-2 outline-pink-600 transition-all duration-500 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950 active:-hue-rotate-30 sm:px-3 sm:py-2">
+              Get my report
+            </button>
+          </PDFDownloadLink>
+        ) : (
+          <a
+            href={"#selection"}
+            aria-label="Let's go back to the selection"
+            className="mx-2 h-fit w-fit rounded-full p-1 shadow-md shadow-pink-600 outline outline-2 outline-pink-600 transition-all duration-500 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950 active:-hue-rotate-30 sm:px-3 sm:py-2"
+          >
+            No report
+          </a>
+        )}
+      </div>
+
+      <div className="flex h-fit w-screen flex-row justify-between text-xs text-indigo-400 text-opacity-40">
+        <div className="mx-1 flex w-fit flex-row">
           <span className="text-[10px]">2023</span>{" "}
-          <span className="font-bold ms-1"> Emotional Assistant</span>{" "}
-          <RiCopyrightLine className="text-[10px] mb-2" />
+          <span className="ms-1 font-bold"> Emotional Assistant</span>{" "}
+          <RiCopyrightLine className="mb-2 text-[10px]" />
         </div>
-        <div className="w-fit flex flex-row mx-1">
-          made with <HiHeart className="text-pink-700 mx-1" /> by
+        <div className="mx-1 flex w-fit flex-row">
+          made with <HiHeart className="mx-1 text-pink-700" /> by
           <Link
             href={"https://github.com/NanaNiki"}
-            className="hover:text-pink-600 hover:italic mx-1"
+            className="mx-1 hover:italic hover:text-pink-600"
           >
             {" "}
             Nicol

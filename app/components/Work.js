@@ -38,7 +38,7 @@ export default function Work({ selectedEmotion }) {
           </h1>
           <div className="flex sm:flex-row flex-col sm:w-10/12 w-11/12 mx-auto overflow-y-scroll">
             <div onMouseLeave={() => setSlideDown(true)}
-            className="has-animation relative flex flex-col sm:m-5  bg-indigo-500 rounded-3xl">
+            className="has-animation relative flex flex-col sm:m-5 mt-5 bg-indigo-500 rounded-3xl overflow-hidden">
               <h1 className="md:text-base text-sm p-5 text-indigo-100 selection:bg-pink-600 selection:text-pink-100">
                 {selectedEmotion.feel}
               </h1>

@@ -4,7 +4,7 @@ import { Comfortaa } from "next/font/google";
 const comfortaa = Comfortaa({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Emotions Assistant App",
+  title: "Emotions Assistant",
   description: "Your personal emotions assistant is here to help you navigate!",
 };
 

@@ -16,7 +16,7 @@ import { FaEye } from "react-icons/fa";
 import { GiHeartInside } from "react-icons/gi";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
-export default function Integration({setThoughts}) {
+export default function Integration({ setThoughts }) {
   const audioRef = useRef(null);
   const [question, setQuestion] = useState(null);
   const [displayTime, setDisplayTime] = useState(7 * 60);
@@ -87,13 +87,13 @@ export default function Integration({setThoughts}) {
   };
 
   return (
-    <div className="lg:h-screen h-fit w-screen flex flex-col" id="integration">
-      <h1 className="animated-item show-up delay-[1s] text-3xl text-center sm:pt-16 pt-6 shadow-text">
+    <div className="flex h-fit w-screen flex-col lg:h-screen" id="integration">
+      <h1 className="animated-item show-up shadow-text pt-6 text-center text-3xl delay-[1s] sm:pt-16">
         Stream of thoughts
       </h1>
-      <div className="flex sm:flex-row flex-col sm:w-10/12 w-11/12 mx-auto">
-        <div className="flex flex-col sm:w-8/12 w-full">
-          <h1 className="animated-item show-up delay-[0.5s] sm:text-lg text-sm p-5 sm:pb-5 pb-0 text-justify mx-auto text-pink-200">
+      <div className="mx-auto flex w-11/12 flex-col sm:w-10/12 sm:flex-row">
+        <div className="flex w-full flex-col sm:w-8/12">
+          <h1 className="animated-item show-up mx-auto p-5 pb-0 text-justify text-sm text-pink-200 delay-[0.5s] sm:pb-5 sm:text-lg">
             Creating a space for a free stream of thoughts is a crucial step in
             the process of integrating emotions. Let your thoughts flow without
             judgment or restriction. It's important to let go of any inhibitions
@@ -101,17 +101,17 @@ export default function Integration({setThoughts}) {
             thoughts to emerge naturally.
           </h1>
         </div>
-        <div className="animated-item show-up delay-[0.5s] flex flex-col sm:w-8/12 w-full">
-          <h1 className="sm:text-lg text-sm p-5 text-justify mx-auto text-indigo-200">
+        <div className="animated-item show-up flex w-full flex-col delay-[0.5s] sm:w-8/12">
+          <h1 className="mx-auto p-5 text-justify text-sm text-indigo-200 sm:text-lg">
             Beneath you can see a timer and a space for your thoughts. If you
             need a starter question or you will find yourself stuck, feel free
             to generate a new one. Best luck!
           </h1>
-          <div className="flex flex-row md:w-6/12 w-10/12 mx-auto">
+          <div className="mx-auto flex w-10/12 flex-row md:w-6/12">
             <div
               className={` ${
                 hideTimer ? "fade-out" : "fade-in"
-              } flex flex-row text-3xl rounded-full mx-auto p-2 text-indigo-800 outline outline-2 outline-indigo-700 `}
+              } mx-auto flex flex-row rounded-full p-2 text-3xl text-indigo-800 outline outline-2 outline-indigo-700 `}
             >
               <button
                 onClick={() => handleIncrementDecrement(1)}
@@ -123,7 +123,7 @@ export default function Integration({setThoughts}) {
               <div
                 className={` ${
                   displayTime === 0 ? "animate-pulse" : ""
-                } text-indigo-300 w-16`}
+                } w-16 text-indigo-300`}
               >
                 {timeFormat(displayTime)}
               </div>
@@ -134,51 +134,62 @@ export default function Integration({setThoughts}) {
               >
                 <AiOutlineMinus />
               </button>
-              <button onClick={startTimer} className="hover:hue-rotate-30 mx-2">
-                {timerOn ? <AiOutlinePause aria-label="Pause" /> : <FiPlay aria-label="Play" />}
+              <button onClick={startTimer} className="mx-2 hover:hue-rotate-30">
+                {timerOn ? (
+                  <AiOutlinePause aria-label="Pause" />
+                ) : (
+                  <FiPlay aria-label="Play" />
+                )}
               </button>
               <audio ref={audioRef} src="/_Alarm04.mp3"></audio>
             </div>
             <button onClick={toogleTimerVisibility} className="mx-4 text-4xl">
               {hideTimer ? (
-                <RiEyeCloseFill className="transition-all duration-500 text-purple-900 hover:text-purple-400" aria-label="Hide timer"/>
+                <RiEyeCloseFill
+                  className="text-purple-900 transition-all duration-500 hover:text-purple-400"
+                  aria-label="Hide timer"
+                />
               ) : (
-                <FaEye className="text-indigo-800 transition-all duration-500 hover:text-indigo-400" aria-label="Show itmer"/>
+                <FaEye
+                  className="text-indigo-800 transition-all duration-500 hover:text-indigo-400"
+                  aria-label="Show itmer"
+                />
               )}
             </button>
           </div>
         </div>
       </div>
       {question ? (
-        <div className="flex flex-col md:w-8/12 w-10/12 mx-auto sm:mt-0 mt-5">
-          <div className="flex flex-row justify-center w-full">
+        <div className="mx-auto mt-5 flex w-10/12 flex-col sm:mt-0 md:w-8/12">
+          <div className="flex w-full flex-row justify-center">
             <button
               onClick={getQuestion}
-              className="outline outline-2 outline-pink-600 rounded-full w-fit h-fit px-3 py-2 sm:text-xl text-pink-200 shadow-md shadow-pink-600 transition-all duration-500 active:-hue-rotate-30 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950"
+              className="h-fit w-fit rounded-full px-3 py-2 text-pink-200 shadow-md shadow-pink-600 outline outline-2 outline-pink-600 transition-all duration-500 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-950 active:-hue-rotate-30 sm:text-xl"
             >
               New Question
             </button>
           </div>
-          <span className="outline outline-2 outline-indigo-600 shadow-md shadow-indigo-600 rounded-3xl text-center text-indigo-200 mx-auto mt-5 p-2 px-3 sm:text-xl text-base">
+          <span className="mx-auto mt-5 rounded-3xl p-2 px-3 text-center text-base text-indigo-200 shadow-md shadow-indigo-600 outline outline-2 outline-indigo-600 sm:text-xl">
             {question}
           </span>
         </div>
       ) : (
         <button
           onClick={getQuestion}
-          className="outline outline-2 outline-pink-700 rounded-full w-fit h-fit px-3 py-2 mt-5 mx-auto sm:text-xl shadow-md shadow-pink-600 transition duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900"
+          className="mx-auto mt-5 h-fit w-fit rounded-full px-3 py-2 shadow-md shadow-pink-600 outline outline-2 outline-pink-700 transition duration-700 hover:text-pink-500 hover:shadow-lg hover:shadow-pink-900 sm:text-xl"
         >
           Reveal the question
         </button>
       )}
-      <div className="flex md:flex-row flex-col sm:mt-10 mt-5 justify-center w-11/12 mx-auto">
+      <div className="mx-auto mt-5 flex w-11/12 flex-col justify-center sm:mt-10 md:flex-row">
         <textarea
           onChange={(e) => {
             setThoughts(e.target.value);
           }}
-          className="md:w-[70%] md:h-[300px] w-[95%] h-[400px] p-5 bg-indigo-300 text-indigo-900 rounded-3xl md:ms-16 md:mx-0 mx-auto resize-none"
-        aria-label="field for reflections"></textarea>
-        <div className="flex flex-col md:ms-10 md:mx-0 mx-auto md:mt-0 mt-5 justify-end sm:text-5xl text-4xl text-pink-700 transition duration-500 hover:-hue-rotate-30">
+          className="mx-auto h-[400px] w-[95%] resize-none rounded-3xl bg-indigo-300 p-5 text-indigo-900 md:mx-0 md:ms-16 md:h-[300px] md:w-[70%]"
+          aria-label="field for reflections"
+        ></textarea>
+        <div className="mx-auto mt-5 flex flex-col justify-end text-4xl text-pink-700 transition duration-500 hover:-hue-rotate-30 sm:text-5xl md:mx-0 md:ms-10 md:mt-0">
           <a href="#closure" aria-label="Let's go to the breathing excercise">
             <GiHeartInside />
             <HiOutlineChevronDoubleDown />

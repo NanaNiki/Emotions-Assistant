@@ -10,7 +10,6 @@
 import Image from "next/image";
 
 export default function Start({ countStart, setCountStart }) {
-  
   const startCountDown = () => {
     const interval = setInterval(() => {
       if (countStart > 0) {
@@ -30,13 +29,13 @@ export default function Start({ countStart, setCountStart }) {
 
   return (
     <>
-    <div className="flex flex-col items-center md:text-start text-center justify-evenly h-screen w-screen font-bold overflow-hidden">
-    <div className="overflow-visible">
+      <div className="flex h-screen w-screen flex-col items-center justify-evenly overflow-hidden text-center font-bold md:text-start">
+        <div className="overflow-visible">
           <Image
             src={"images/btl.svg"}
             width={400}
             height={400}
-            className="z-0 sm:absolute -top-24 -left-24 hidden md:inline"
+            className="-left-24 -top-24 z-0 hidden sm:absolute md:inline"
             priority={true}
             alt="blob of pink and purple shades"
           />
@@ -44,7 +43,7 @@ export default function Start({ countStart, setCountStart }) {
             src={"images/btr.svg"}
             width={430}
             height={400}
-            className="z-0 absolute top-0 right-0"
+            className="absolute right-0 top-0 z-0"
             priority={true}
             alt="blob of pink and purple shades"
           />
@@ -52,43 +51,43 @@ export default function Start({ countStart, setCountStart }) {
             src={"images/bbl.svg"}
             width={390}
             height={400}
-            className="z-0 absolute sm:-bottom-0 sm:-left-20 bottom-2 -left-20"
-            priority={true} 
-            alt="blob of violet and light blue shades"        
-           />
+            className="absolute -left-20 bottom-2 z-0 sm:-bottom-0 sm:-left-20"
+            priority={true}
+            alt="blob of violet and light blue shades"
+          />
           <Image
             src={"images/bbr.svg"}
             width={400}
             height={400}
-            className="z-0 sm:absolute -bottom-0 right-0 hidden md:inline"
+            className="-bottom-0 right-0 z-0 hidden sm:absolute md:inline"
             priority={true}
-            alt="blob of violet and light blue shades"  
+            alt="blob of violet and light blue shades"
           />
         </div>
-      <h1 className="animated-item show-up delay-[1s] sm:text-5xl text-3xl">
-        Hello!
-      </h1>
-      <h1 className="animated-item show-up delay-[2s] sm:text-5xl text-3xl">
-        This is your Emotional Assistant!
-      </h1>
-      <h1 className="animated-item show-up delay-[3s] sm:text-3xl sm:mx-0 text-xl mx-4">
-        I'm here to assist you in the process of going through emotions.
-      </h1>
-      <h1 className="animated-item show-up delay-[5s] sm:flex hidden text-3xl">
-        First, let's breathe a little
-      </h1>
-      <h1 className="animated-item show-up delay-[6s] sm:hidden text-xl">
-        First,<br></br> let's breathe a little
-      </h1>
-      <a
-      href={"#breathe"}
-        onClick={handleStartCountDown}
-        aria-label="Let's go to the breathing excercise"
-        className="bg-purple-950 hover:bg-pink-900 text-white rounded-full p-2.5 px-5 text-3xl animated-item show-up delay-[7s]"
-      >
-        Ready?
-      </a>
-    </div>
+        <h1 className="animated-item show-up text-3xl delay-[1s] sm:text-5xl">
+          Hello!
+        </h1>
+        <h1 className="animated-item show-up text-3xl delay-[2s] sm:text-5xl">
+          This is your Emotional Assistant!
+        </h1>
+        <h1 className="animated-item show-up mx-4 text-xl delay-[3s] sm:mx-0 sm:text-3xl">
+          I'm here to assist you in the process of going through emotions.
+        </h1>
+        <h1 className="animated-item show-up hidden text-3xl delay-[5s] sm:flex">
+          First, let's breathe a little
+        </h1>
+        <h1 className="animated-item show-up text-xl delay-[6s] sm:hidden">
+          First,<br></br> let's breathe a little
+        </h1>
+        <a
+          href={"#breathe"}
+          onClick={handleStartCountDown}
+          aria-label="Let's go to the breathing excercise"
+          className="animated-item show-up rounded-full bg-purple-950 p-2.5 px-5 text-3xl text-white delay-[7s] hover:bg-pink-900"
+        >
+          Ready?
+        </a>
+      </div>
     </>
   );
 }

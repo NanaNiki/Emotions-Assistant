@@ -3,7 +3,7 @@
  * from states being passed as props.
  * @returns The `YourReport` component is being returned, which renders a PDF document with selected
  * emotion, thoughts and affirmation.
- * and to nest it inside thankyou.js 
+ * and to nest it inside thankyou.js
  */
 import {
   Page,
@@ -76,29 +76,29 @@ export default function YourReport({ selectedEmotion, thoughts, affirmation }) {
           fixed={true}
           alt="pdfblobtop"
         ></Image>
-          <View style={styles.section}>
-            <Text style={styles.title}>
-              ~ Today I worked on: {selectedEmotion?.name} ~
-            </Text>
-            <Text style={styles.text}>{selectedEmotion?.text}</Text>
-            <Text style={styles.text}> {selectedEmotion?.feel}</Text>
-            <Text style={styles.text}> {selectedEmotion?.express} </Text>
-            <Text style={styles.text}> {selectedEmotion?.note} </Text>
-          </View>
-          <View style={styles.section}>
-            <Text style={styles.title}> My reflections:</Text>
-            <Text style={styles.text}>{thoughts}</Text>
-          </View>
-          <View style={styles.section}>
-            <Text style={styles.title}> My affirmation:</Text>
-            <Text style={styles.affirm}>{affirmation}</Text>
-          </View>
-          <Image
-            src={"images/pdfbot.png"}
-            style={styles.imagebot}
-            fixed={true}
-            alt="pdfblobbottom"
-          ></Image>
+        <View style={styles.section}>
+          <Text style={styles.title}>
+            ~ Today I worked on: {selectedEmotion?.name} ~
+          </Text>
+          <Text style={styles.text}>{selectedEmotion?.text}</Text>
+          <Text style={styles.text}> {selectedEmotion?.feel}</Text>
+          <Text style={styles.text}> {selectedEmotion?.express} </Text>
+          <Text style={styles.text}> {selectedEmotion?.note} </Text>
+        </View>
+        <View style={styles.section}>
+          <Text style={styles.title}> My reflections:</Text>
+          <Text style={styles.text}>{thoughts}</Text>
+        </View>
+        <View style={styles.section}>
+          <Text style={styles.title}> My affirmation:</Text>
+          <Text style={styles.affirm}>{affirmation}</Text>
+        </View>
+        <Image
+          src={"images/pdfbot.png"}
+          style={styles.imagebot}
+          fixed={true}
+          alt="pdfblobbottom"
+        ></Image>
       </Page>
     </Document>
   );
